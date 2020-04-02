@@ -30,6 +30,12 @@ class OrderListView: UIViewController {
     }
     
     
+    func updateItems(_ items: [OrderListItem]) {
+        self.items = items
+        tableView.reloadData()
+    }
+    
+    
     @IBAction func butAddTapped(_ sender: Any) {
         controller.butAddTapped()
     }
