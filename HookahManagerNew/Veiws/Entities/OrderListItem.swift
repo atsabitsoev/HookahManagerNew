@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+
+struct OrderListItem {
+    
+    var dateTime: String
+    var tableDescription: String
+    var customerName: String
+    var options: String
+    var number: String
+    var status: String
+    
+    var trailingSwipeType: SwipeTypes
+    var leadingSwipeType: SwipeTypes
+}

@@ -7,3 +7,32 @@
 //
 
 import Foundation
+
+
+class OrderListController {
+    
+
+    init(view: OrderListView) {
+        self.view = view
+        self.model = OrderListModel()
+    }
+
+    
+    private var model: OrderListModel!
+    private var view: OrderListView!
+    
+    
+    func trailingSwipe(index: Int) {
+        print("Свайп справа index: \(index)")
+    }
+    
+    func leadingSwipe(index: Int) {
+        print("Свайп слева index: \(index)")
+    }
+    
+    
+    func butAddTapped() {
+        
+    }
+
+}

@@ -9,16 +9,23 @@
 import UIKit
 
 class OrderListItemCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    @IBOutlet weak var labDateTime: UILabel!
+    @IBOutlet weak var labTableDescription: UILabel!
+    @IBOutlet weak var labCustomerName: UILabel!
+    @IBOutlet weak var labOptions: UILabel!
+    @IBOutlet weak var labNumber: UILabel!
+    @IBOutlet weak var labStatus: UILabel!
+    
+    
+    func configure(with item: OrderListItem) {
+        labDateTime.text = item.dateTime
+        labTableDescription.text = item.tableDescription
+        labCustomerName.text = item.customerName
+        labOptions.text = item.options
+        labNumber.text = item.number
+        labStatus.text = item.status
     }
 
 }

@@ -7,20 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC305372243677A4002AA83C /* MainTabBar.storyboard */; };
+		AC30537524367883002AA83C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30537424367883002AA83C /* OrderList.storyboard */; };
+		AC30537724367A6F002AA83C /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537624367A6F002AA83C /* OrderListView.swift */; };
+		AC30537924367ADA002AA83C /* OrderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537824367ADA002AA83C /* OrderListController.swift */; };
+		AC30537B24367AE4002AA83C /* OrderListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537A24367AE4002AA83C /* OrderListModel.swift */; };
+		AC30537E24367CB8002AA83C /* OrderListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537D24367CB8002AA83C /* OrderListItem.swift */; };
+		AC30538124367D87002AA83C /* OrderListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30538024367D87002AA83C /* OrderListItemCell.swift */; };
+		AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3053822436856A002AA83C /* SwipeTypes.swift */; };
+		AC30538724368F30002AA83C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC30538624368F30002AA83C /* .gitignore */; };
 		ACA4FFBE243676B90072A377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FFBD243676B90072A377 /* AppDelegate.swift */; };
 		ACA4FFC0243676B90072A377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FFBF243676B90072A377 /* SceneDelegate.swift */; };
-		ACA4FFC2243676B90072A377 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FFC1243676B90072A377 /* ViewController.swift */; };
-		ACA4FFC5243676B90072A377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FFC3243676B90072A377 /* Main.storyboard */; };
 		ACA4FFC7243676BB0072A377 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FFC6243676BB0072A377 /* Assets.xcassets */; };
 		ACA4FFCA243676BB0072A377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FFC8243676BB0072A377 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC305372243677A4002AA83C /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		AC30537424367883002AA83C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
+		AC30537624367A6F002AA83C /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		AC30537824367ADA002AA83C /* OrderListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListController.swift; sourceTree = "<group>"; };
+		AC30537A24367AE4002AA83C /* OrderListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListModel.swift; sourceTree = "<group>"; };
+		AC30537D24367CB8002AA83C /* OrderListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListItem.swift; sourceTree = "<group>"; };
+		AC30538024367D87002AA83C /* OrderListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListItemCell.swift; sourceTree = "<group>"; };
+		AC3053822436856A002AA83C /* SwipeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTypes.swift; sourceTree = "<group>"; };
+		AC30538624368F30002AA83C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		ACA4FFBA243676B90072A377 /* HookahManagerNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahManagerNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA4FFBD243676B90072A377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA4FFBF243676B90072A377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACA4FFC1243676B90072A377 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACA4FFC4243676B90072A377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACA4FFC6243676BB0072A377 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACA4FFC9243676BB0072A377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA4FFCB243676BB0072A377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,9 +51,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC30536E24367745002AA83C /* Veiws */ = {
+			isa = PBXGroup;
+			children = (
+				AC30537624367A6F002AA83C /* OrderListView.swift */,
+				AC30537F24367D6B002AA83C /* Cells */,
+				AC30537C24367C9E002AA83C /* Entities */,
+			);
+			path = Veiws;
+			sourceTree = "<group>";
+		};
+		AC30536F24367755002AA83C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC30537824367ADA002AA83C /* OrderListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AC3053702436775E002AA83C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC30537A24367AE4002AA83C /* OrderListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC30537124367775002AA83C /* Storyboards+Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				AC305372243677A4002AA83C /* MainTabBar.storyboard */,
+				AC30537424367883002AA83C /* OrderList.storyboard */,
+			);
+			path = "Storyboards+Xibs";
+			sourceTree = "<group>";
+		};
+		AC30537C24367C9E002AA83C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AC30537D24367CB8002AA83C /* OrderListItem.swift */,
+				AC3053822436856A002AA83C /* SwipeTypes.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AC30537F24367D6B002AA83C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC30538024367D87002AA83C /* OrderListItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		ACA4FFB1243676B90072A377 = {
 			isa = PBXGroup;
 			children = (
+				AC30538624368F30002AA83C /* .gitignore */,
 				ACA4FFBC243676B90072A377 /* HookahManagerNew */,
 				ACA4FFBB243676B90072A377 /* Products */,
 			);
@@ -56,15 +123,25 @@
 		ACA4FFBC243676B90072A377 /* HookahManagerNew */ = {
 			isa = PBXGroup;
 			children = (
-				ACA4FFBD243676B90072A377 /* AppDelegate.swift */,
-				ACA4FFBF243676B90072A377 /* SceneDelegate.swift */,
-				ACA4FFC1243676B90072A377 /* ViewController.swift */,
-				ACA4FFC3243676B90072A377 /* Main.storyboard */,
-				ACA4FFC6243676BB0072A377 /* Assets.xcassets */,
-				ACA4FFC8243676BB0072A377 /* LaunchScreen.storyboard */,
+				AC30537124367775002AA83C /* Storyboards+Xibs */,
+				AC30536E24367745002AA83C /* Veiws */,
+				AC30536F24367755002AA83C /* Controllers */,
+				AC3053702436775E002AA83C /* Models */,
+				ACA4FFD1243676C80072A377 /* SupportingFiles */,
 				ACA4FFCB243676BB0072A377 /* Info.plist */,
 			);
 			path = HookahManagerNew;
+			sourceTree = "<group>";
+		};
+		ACA4FFD1243676C80072A377 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				ACA4FFBD243676B90072A377 /* AppDelegate.swift */,
+				ACA4FFBF243676B90072A377 /* SceneDelegate.swift */,
+				ACA4FFC6243676BB0072A377 /* Assets.xcassets */,
+				ACA4FFC8243676BB0072A377 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +202,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC30538724368F30002AA83C /* .gitignore in Resources */,
+				AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */,
 				ACA4FFCA243676BB0072A377 /* LaunchScreen.storyboard in Resources */,
 				ACA4FFC7243676BB0072A377 /* Assets.xcassets in Resources */,
-				ACA4FFC5243676B90072A377 /* Main.storyboard in Resources */,
+				AC30537524367883002AA83C /* OrderList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +217,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA4FFC2243676B90072A377 /* ViewController.swift in Sources */,
+				AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */,
+				AC30537924367ADA002AA83C /* OrderListController.swift in Sources */,
 				ACA4FFBE243676B90072A377 /* AppDelegate.swift in Sources */,
+				AC30538124367D87002AA83C /* OrderListItemCell.swift in Sources */,
+				AC30537B24367AE4002AA83C /* OrderListModel.swift in Sources */,
+				AC30537E24367CB8002AA83C /* OrderListItem.swift in Sources */,
 				ACA4FFC0243676B90072A377 /* SceneDelegate.swift in Sources */,
+				AC30537724367A6F002AA83C /* OrderListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACA4FFC3243676B90072A377 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACA4FFC4243676B90072A377 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ACA4FFC8243676BB0072A377 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,6 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
