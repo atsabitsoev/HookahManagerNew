@@ -28,7 +28,7 @@ class OrderListController {
     //MARK: View Triggers
     func viewDidLoad() {
         view.setDelegates()
-        fetchOrders()
+        startOrderListener()
     }
     
     func swipe(orderId: String, swipeType: SwipeTypes) {
@@ -48,8 +48,8 @@ class OrderListController {
     
     
     //MARK: Private Functions
-    private func fetchOrders() {
-        model.fetchOrders { (orders, error) in
+    private func startOrderListener() {
+        model.startOrdersListener { (orders, error) in
             guard let orders = orders else { return }
             self.showOrderItems(orders: orders)
         }
@@ -95,7 +95,7 @@ class OrderListController {
     
     private func getOrderListItem(from order: Order) -> OrderListItem {
         let id = order.id
-        let dateTime = order.date.string(in: "HH:mm, dd MMMM")
+        let dateTime = order.date.string(in: "HH:mm, d MMMM")
         let tableDescription = "\(order.table.size.count) персон(ы)"
         let customerName = order.customerName
         let options = order.table.options.joined(separator: "\n")
