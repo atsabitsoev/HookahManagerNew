@@ -25,9 +25,10 @@ class OrderListController {
     private var orders: [Order] = []
     
     
+    //MARK: View Triggers
     func viewDidLoad() {
         view.setDelegates()
-        updateOrders()
+        fetchOrders()
     }
     
     func swipe(orderId: String, swipeType: SwipeTypes) {
@@ -46,7 +47,8 @@ class OrderListController {
     }
     
     
-    private func updateOrders() {
+    //MARK: Private Functions
+    private func fetchOrders() {
         model.fetchOrders { (orders, error) in
             guard let orders = orders else { return }
             self.showOrderItems(orders: orders)
