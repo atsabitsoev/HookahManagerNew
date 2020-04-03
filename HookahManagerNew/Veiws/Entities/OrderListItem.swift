@@ -11,6 +11,7 @@ import Foundation
 
 struct OrderListItem {
     
+    var orderId: String
     var dateTime: String
     var tableDescription: String
     var customerName: String
