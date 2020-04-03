@@ -16,6 +16,11 @@
 		AC30538124367D87002AA83C /* OrderListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30538024367D87002AA83C /* OrderListItemCell.swift */; };
 		AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3053822436856A002AA83C /* SwipeTypes.swift */; };
 		AC30538724368F30002AA83C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC30538624368F30002AA83C /* .gitignore */; };
+		AC7EF20424370F880059B1C2 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EF20324370F880059B1C2 /* Order.swift */; };
+		AC7EF206243711470059B1C2 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EF205243711470059B1C2 /* OrderStatus.swift */; };
+		AC7EF208243711D50059B1C2 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EF207243711D50059B1C2 /* Table.swift */; };
+		AC7EF20A243712DE0059B1C2 /* TableSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EF209243712DE0059B1C2 /* TableSize.swift */; };
+		AC7EF20D2437177D0059B1C2 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EF20C2437177D0059B1C2 /* DateExt.swift */; };
 		ACA4FFBE243676B90072A377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FFBD243676B90072A377 /* AppDelegate.swift */; };
 		ACA4FFC0243676B90072A377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FFBF243676B90072A377 /* SceneDelegate.swift */; };
 		ACA4FFC7243676BB0072A377 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FFC6243676BB0072A377 /* Assets.xcassets */; };
@@ -32,6 +37,11 @@
 		AC30538024367D87002AA83C /* OrderListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListItemCell.swift; sourceTree = "<group>"; };
 		AC3053822436856A002AA83C /* SwipeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTypes.swift; sourceTree = "<group>"; };
 		AC30538624368F30002AA83C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AC7EF20324370F880059B1C2 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		AC7EF205243711470059B1C2 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		AC7EF207243711D50059B1C2 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		AC7EF209243712DE0059B1C2 /* TableSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSize.swift; sourceTree = "<group>"; };
+		AC7EF20C2437177D0059B1C2 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		ACA4FFBA243676B90072A377 /* HookahManagerNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahManagerNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA4FFBD243676B90072A377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA4FFBF243676B90072A377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				AC30537824367ADA002AA83C /* OrderListController.swift */,
+				AC7EF20224370F7A0059B1C2 /* Entities */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -103,6 +114,25 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		AC7EF20224370F7A0059B1C2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EF20324370F880059B1C2 /* Order.swift */,
+				AC7EF205243711470059B1C2 /* OrderStatus.swift */,
+				AC7EF207243711D50059B1C2 /* Table.swift */,
+				AC7EF209243712DE0059B1C2 /* TableSize.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AC7EF20B2437175F0059B1C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EF20C2437177D0059B1C2 /* DateExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ACA4FFB1243676B90072A377 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +153,7 @@
 		ACA4FFBC243676B90072A377 /* HookahManagerNew */ = {
 			isa = PBXGroup;
 			children = (
+				AC7EF20B2437175F0059B1C2 /* Extensions */,
 				AC30537124367775002AA83C /* Storyboards+Xibs */,
 				AC30536E24367745002AA83C /* Veiws */,
 				AC30536F24367755002AA83C /* Controllers */,
@@ -219,12 +250,17 @@
 			files = (
 				AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */,
 				AC30537924367ADA002AA83C /* OrderListController.swift in Sources */,
+				AC7EF20D2437177D0059B1C2 /* DateExt.swift in Sources */,
 				ACA4FFBE243676B90072A377 /* AppDelegate.swift in Sources */,
+				AC7EF20424370F880059B1C2 /* Order.swift in Sources */,
 				AC30538124367D87002AA83C /* OrderListItemCell.swift in Sources */,
+				AC7EF20A243712DE0059B1C2 /* TableSize.swift in Sources */,
 				AC30537B24367AE4002AA83C /* OrderListModel.swift in Sources */,
 				AC30537E24367CB8002AA83C /* OrderListItem.swift in Sources */,
 				ACA4FFC0243676B90072A377 /* SceneDelegate.swift in Sources */,
+				AC7EF206243711470059B1C2 /* OrderStatus.swift in Sources */,
 				AC30537724367A6F002AA83C /* OrderListView.swift in Sources */,
+				AC7EF208243711D50059B1C2 /* Table.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

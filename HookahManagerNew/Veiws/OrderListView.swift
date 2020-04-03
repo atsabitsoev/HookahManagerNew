@@ -24,7 +24,17 @@ class OrderListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureModule()
+        controller.viewDidLoad()
+    }
+    
+    
+    func configureModule() {
         self.controller = OrderListController(view: self)
+    }
+    
+    
+    func setDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -33,6 +43,28 @@ class OrderListView: UIViewController {
     func updateItems(_ items: [OrderListItem]) {
         self.items = items
         tableView.reloadData()
+    }
+    
+    func updateItem(orderId: String, newItem: OrderListItem) {
+        let itemIndex = items.firstIndex { (item) -> Bool in
+            return item.orderId == orderId
+        }
+        guard let index = itemIndex else { return }
+        
+        self.items[index] = newItem
+        let reloadingIndexPath = IndexPath(row: index, section: 0)
+        tableView.reloadRows(at: [reloadingIndexPath], with: .automatic)
+    }
+    
+    func deleteItem(orderId: String) {
+        let itemIndex = items.firstIndex { (item) -> Bool in
+            return item.orderId == orderId
+        }
+        guard let index = itemIndex else { return }
+        
+        self.items.remove(at: index)
+        let deleteIndexPath = IndexPath(row: index, section: 0)
+        tableView.deleteRows(at: [deleteIndexPath], with: .automatic)
     }
     
     
@@ -66,7 +98,8 @@ extension OrderListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let item = items[indexPath.row]
         let action = item.trailingSwipeType.getSwipeAction { (_, _, _) in
-            self.controller.trailingSwipe(index: indexPath.row)
+            let orderId = item.orderId
+            self.controller.swipe(orderId: orderId, swipeType: item.trailingSwipeType)
         }
         let configuration = UISwipeActionsConfiguration(actions: [action])
         return configuration
@@ -75,7 +108,8 @@ extension OrderListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let item = items[indexPath.row]
         let action = item.leadingSwipeType.getSwipeAction { (_, _, _) in
-            self.controller.leadingSwipe(index: indexPath.row)
+            let orderId = item.orderId
+            self.controller.swipe(orderId: orderId, swipeType: item.leadingSwipeType)
         }
         let configuration = UISwipeActionsConfiguration(actions: [action])
         return configuration
