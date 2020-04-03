@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>264452588191-t11ds45g9f9ek1e4fb2josu425e924uu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.264452588191-t11ds45g9f9ek1e4fb2josu425e924uu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBKV7zX6K3PGyPqZmIh_OG9j8kFDij45fM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>264452588191</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.bitsoev.HookahManagerNew</string>
+	<key>PROJECT_ID</key>
+	<string>gvidon-f7fc5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gvidon-f7fc5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:264452588191:ios:c12b932945938b730218aa</string>
+	<key>DATABASE_URL</key>
+	<string>https://gvidon-f7fc5.firebaseio.com</string>
+</dict>
+</plist>
