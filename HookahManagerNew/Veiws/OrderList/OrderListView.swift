@@ -68,8 +68,17 @@ class OrderListView: UIViewController {
     }
     
     
+    //MARK: IBActions
     @IBAction func butAddTapped(_ sender: Any) {
         controller.butAddTapped()
+    }
+    
+    
+    //MARK: Navigation
+    func showCreatingOrderView() {
+        let storyboard = UIStoryboard(name: "CreatingOrder", bundle: nil)
+        let creatingOrderView = storyboard.instantiateViewController(withIdentifier: "CreatingOrderView") as! CreatingOrderView
+        self.navigationController?.show(creatingOrderView, sender: nil)
     }
     
 }
