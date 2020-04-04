@@ -24,13 +24,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Размер стола" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-AL-cE5">
-                                                <rect key="frame" x="16" y="16" width="374" height="20.5"/>
+                                                <rect key="frame" x="16" y="12" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oqv-15-Xit">
-                                                <rect key="frame" x="16" y="48.5" width="382" height="101.5"/>
+                                                <rect key="frame" x="16" y="44.5" width="382" height="105.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iXF-Ci-Imy">
                                                     <size key="itemSize" width="109" height="109"/>
@@ -40,7 +40,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TableSizeCell" id="cm7-f0-N11" customClass="TableSizeCell" customModule="HookahManagerNew" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="-4" width="109" height="109"/>
+                                                        <rect key="frame" x="0.0" y="-2" width="109" height="109"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jPI-Ua-TSz">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
@@ -104,7 +104,7 @@
                                             <constraint firstItem="oqv-15-Xit" firstAttribute="leading" secondItem="Spw-dB-SV0" secondAttribute="leading" constant="16" id="Tsj-A1-vWW"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="YO1-AL-cE5" secondAttribute="trailing" constant="16" id="UBs-JB-SPd"/>
                                             <constraint firstAttribute="trailing" secondItem="oqv-15-Xit" secondAttribute="trailing" constant="16" id="YGe-q3-lDT"/>
-                                            <constraint firstItem="YO1-AL-cE5" firstAttribute="top" secondItem="Spw-dB-SV0" secondAttribute="top" constant="16" id="k9P-RR-ZfC"/>
+                                            <constraint firstItem="YO1-AL-cE5" firstAttribute="top" secondItem="Spw-dB-SV0" secondAttribute="top" constant="12" id="k9P-RR-ZfC"/>
                                             <constraint firstItem="YO1-AL-cE5" firstAttribute="leading" secondItem="Spw-dB-SV0" secondAttribute="leading" constant="16" id="q2L-wq-Ykd"/>
                                             <constraint firstItem="oqv-15-Xit" firstAttribute="top" secondItem="YO1-AL-cE5" secondAttribute="bottom" constant="12" id="tMb-S6-Vfi"/>
                                         </constraints>
@@ -173,7 +173,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-Y9-WpD">
                                         <rect key="frame" x="0.0" y="340" width="414" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя посетителя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZD-vw-9CW">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя посетителя" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZD-vw-9CW">
                                                 <rect key="frame" x="16" y="8" width="382" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -207,6 +207,8 @@
                     <connections>
                         <outlet property="colViewOptions" destination="W0P-Ht-3ig" id="WId-bV-xK8"/>
                         <outlet property="colViewSize" destination="oqv-15-Xit" id="Uej-Mf-XR5"/>
+                        <outlet property="stackView" destination="hNR-kv-PiK" id="9NU-W4-14T"/>
+                        <outlet property="tfCustomerName" destination="RZD-vw-9CW" id="PJH-Sc-jsw"/>
                         <outlet property="viewOptions" destination="LoF-hl-mL5" id="8zc-Kx-Zmw"/>
                         <outlet property="viewTableSize" destination="Spw-dB-SV0" id="6Cm-Nz-qHz"/>
                     </connections>

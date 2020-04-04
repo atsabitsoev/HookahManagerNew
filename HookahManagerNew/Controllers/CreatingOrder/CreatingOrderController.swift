@@ -32,6 +32,21 @@ class CreatingOrderController {
         fetchTables()
     }
     
+    @objc func viewTapped() {
+        view.viewDown()
+        view.hideKeyboard()
+    }
+    
+    func tfReturned() {
+        view.viewDown()
+        view.hideKeyboard()
+    }
+    
+    func tfDidBeginEditing() {
+        view.viewUp()
+    }
+    
+    
     func sizeSelected(id: String, selected: Bool) {
         let toBeSelected = !selected
         if toBeSelected {

@@ -14,10 +14,15 @@ class CreatingOrderView: UIViewController {
     private var controller: CreatingOrderController!
     
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var colViewSize: UICollectionView!
     @IBOutlet weak var colViewOptions: UICollectionView!
     @IBOutlet weak var viewTableSize: UIView!
     @IBOutlet weak var viewOptions: UIView!
+    @IBOutlet weak var tfCustomerName: UITextField!
+    
+    
+    var currentViewInset: CGFloat = 0
     
     
     private var sizeItems: [TableSizeItem] = []
@@ -33,7 +38,7 @@ class CreatingOrderView: UIViewController {
     
     
     private func configureModule() {
-        self.controller = CreatingOrderController(view: self)
+        controller = CreatingOrderController(view: self)
     }
     
     func configureView() {
@@ -46,6 +51,32 @@ class CreatingOrderView: UIViewController {
         colViewSize.dataSource = self
         colViewOptions.delegate = self
         colViewOptions.dataSource = self
+        tfCustomerName.delegate = self
+    }
+    
+    func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func viewUp() {
+        let keyboardHeight: CGFloat = 300
+        let inset = self.view.frame.maxY - stackView.frame.maxY - keyboardHeight
+        print(inset)
+        guard inset < 0 else { return }
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame = self.view.frame.inset(by: UIEdgeInsets(top: inset, left: 0, bottom: -inset, right: 0))
+        }
+        currentViewInset = inset
+    }
+    
+    func viewDown() {
+        let inset = currentViewInset
+        print(inset)
+        guard inset < 0 else { return }
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame = self.view.frame.inset(by: UIEdgeInsets(top: -inset, left: 0, bottom: inset, right: 0))
+        }
+        currentViewInset = 0
     }
     
     
@@ -123,6 +154,11 @@ class CreatingOrderView: UIViewController {
         optionsItems[itemIndex] = item
         colViewOptions.reloadData()
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        controller.viewTapped()
+    }
 
 }
 
@@ -176,4 +212,18 @@ extension CreatingOrderView: UICollectionViewDelegate, UICollectionViewDataSourc
         return CGSize(width: 109, height: 109)
     }
     
+}
+
+
+//MARK: TextField Delegate
+extension CreatingOrderView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        controller.tfReturned()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        controller.tfDidBeginEditing()
+    }
 }
