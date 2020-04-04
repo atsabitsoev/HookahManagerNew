@@ -63,6 +63,10 @@ class CreatingOrderController {
         view.setOptionsItemSelected(tableId: id, selected: !selected)
     }
     
+    func butChooseDateTapped() {
+        print("Выбираем дату тут")
+    }
+    
     
     private func fetchTables() {
         model.fetchTables { (tables, errorString) in

@@ -35,6 +35,8 @@
 		ACAEBF4B2437DA61008CEE2A /* TableSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEBF4A2437DA61008CEE2A /* TableSizeCell.swift */; };
 		ACAEBF4D2437DCC0008CEE2A /* OptionsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEBF4C2437DCC0008CEE2A /* OptionsItem.swift */; };
 		ACAEBF4F2437DD53008CEE2A /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEBF4E2437DD53008CEE2A /* OptionsCell.swift */; };
+		ACD59E6424392DED0061A72F /* DayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD59E6324392DED0061A72F /* DayItem.swift */; };
+		ACD59E66243933CC0061A72F /* COSelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD59E65243933CC0061A72F /* COSelectDateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		ACAEBF4A2437DA61008CEE2A /* TableSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSizeCell.swift; sourceTree = "<group>"; };
 		ACAEBF4C2437DCC0008CEE2A /* OptionsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsItem.swift; sourceTree = "<group>"; };
 		ACAEBF4E2437DD53008CEE2A /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
+		ACD59E6324392DED0061A72F /* DayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItem.swift; sourceTree = "<group>"; };
+		ACD59E65243933CC0061A72F /* COSelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSelectDateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				AC71DFCA2437CF4B00F091CC /* CreatingOrderView.swift */,
+				ACD59E65243933CC0061A72F /* COSelectDateView.swift */,
 				ACAEBF492437DA48008CEE2A /* Cells */,
 				ACAEBF462437D90F008CEE2A /* Entities */,
 			);
@@ -260,6 +265,7 @@
 			children = (
 				ACAEBF472437D91D008CEE2A /* SizeItem.swift */,
 				ACAEBF4C2437DCC0008CEE2A /* OptionsItem.swift */,
+				ACD59E6324392DED0061A72F /* DayItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */,
 				AC30537924367ADA002AA83C /* OrderListController.swift in Sources */,
 				AC71DFCB2437CF4B00F091CC /* CreatingOrderView.swift in Sources */,
+				ACD59E6424392DED0061A72F /* DayItem.swift in Sources */,
 				ACAEBF4B2437DA61008CEE2A /* TableSizeCell.swift in Sources */,
 				AC7EF20D2437177D0059B1C2 /* DateExt.swift in Sources */,
 				AC71DFCD2437CF6300F091CC /* CreatingOrderController.swift in Sources */,
@@ -420,6 +427,7 @@
 				AC7EF20424370F880059B1C2 /* Order.swift in Sources */,
 				AC30538124367D87002AA83C /* OrderListItemCell.swift in Sources */,
 				AC7EF20A243712DE0059B1C2 /* TableSize.swift in Sources */,
+				ACD59E66243933CC0061A72F /* COSelectDateView.swift in Sources */,
 				AC30537B24367AE4002AA83C /* OrderListModel.swift in Sources */,
 				AC30537E24367CB8002AA83C /* OrderListItem.swift in Sources */,
 				ACA4FFC0243676B90072A377 /* SceneDelegate.swift in Sources */,

@@ -173,10 +173,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-Y9-WpD">
                                         <rect key="frame" x="0.0" y="340" width="414" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя посетителя" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZD-vw-9CW">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя посетителя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZD-vw-9CW">
                                                 <rect key="frame" x="16" y="8" width="382" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,12 +190,33 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb2-gX-dFK">
+                                <rect key="frame" x="24" y="755" width="366" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="750" constant="50" id="CWw-oa-8qk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Выбрать дату">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="butChooseDateTapped:" destination="7DQ-WS-krd" eventType="touchUpInside" id="r7f-2s-Ksx"/>
+                                    <segue destination="eHs-EY-yY4" kind="popoverPresentation" popoverAnchorView="Wb2-gX-dFK" id="JDZ-Fh-ozM">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="hNR-kv-PiK" firstAttribute="top" secondItem="0vj-Ma-4bu" secondAttribute="top" id="AmH-tK-4kE"/>
+                            <constraint firstItem="Wb2-gX-dFK" firstAttribute="leading" secondItem="0vj-Ma-4bu" secondAttribute="leading" constant="24" id="EjO-C1-T0p"/>
+                            <constraint firstItem="Wb2-gX-dFK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hNR-kv-PiK" secondAttribute="bottom" constant="8" id="UIP-6U-qRj"/>
                             <constraint firstItem="hNR-kv-PiK" firstAttribute="leading" secondItem="0vj-Ma-4bu" secondAttribute="leading" id="UwC-ft-KCg"/>
                             <constraint firstItem="hNR-kv-PiK" firstAttribute="trailing" secondItem="0vj-Ma-4bu" secondAttribute="trailing" id="eol-of-5gH"/>
+                            <constraint firstItem="0vj-Ma-4bu" firstAttribute="trailing" secondItem="Wb2-gX-dFK" secondAttribute="trailing" constant="24" id="rd3-6a-iBE"/>
+                            <constraint firstItem="0vj-Ma-4bu" firstAttribute="bottom" secondItem="Wb2-gX-dFK" secondAttribute="bottom" constant="8" id="zLH-X9-quU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0vj-Ma-4bu"/>
                     </view>
@@ -216,6 +237,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nki-Ur-9VA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="133.92857142857142"/>
+        </scene>
+        <!--Select Date View-->
+        <scene sceneID="MqD-sG-gP1">
+            <objects>
+                <viewController id="eHs-EY-yY4" customClass="COSelectDateView" customModule="HookahManagerNew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Uq-7N-Fqw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oi-uh-7zE">
+                                <rect key="frame" x="0.0" y="510" width="414" height="332"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ri-jE-BJS">
+                                        <rect key="frame" x="32" y="232" width="350" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="DzS-mu-0Rb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Выбрать">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="butSelectTapped:" destination="eHs-EY-yY4" eventType="touchUpInside" id="BMO-sC-w0m"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsX-f0-Wbi">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="216"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="YkU-7d-CdJ"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="6Ri-jE-BJS" secondAttribute="bottom" constant="8" id="51i-l5-O2S"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="6Ri-jE-BJS" secondAttribute="trailing" constant="24" id="Mxr-25-2qF"/>
+                                    <constraint firstAttribute="trailing" secondItem="RsX-f0-Wbi" secondAttribute="trailing" id="WFs-VL-RgT"/>
+                                    <constraint firstItem="RsX-f0-Wbi" firstAttribute="top" secondItem="0oi-uh-7zE" secondAttribute="top" constant="8" id="aji-YY-NiW"/>
+                                    <constraint firstItem="6Ri-jE-BJS" firstAttribute="top" secondItem="RsX-f0-Wbi" secondAttribute="bottom" constant="8" id="hCP-7p-9kn"/>
+                                    <constraint firstItem="RsX-f0-Wbi" firstAttribute="leading" secondItem="0oi-uh-7zE" secondAttribute="leading" id="npA-xn-Y0t"/>
+                                    <constraint firstItem="6Ri-jE-BJS" firstAttribute="leading" secondItem="0oi-uh-7zE" secondAttribute="leadingMargin" constant="24" id="su4-hU-ASV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0oi-uh-7zE" firstAttribute="leading" secondItem="No8-Aw-zRR" secondAttribute="leading" id="HGY-TD-913"/>
+                            <constraint firstItem="0oi-uh-7zE" firstAttribute="trailing" secondItem="No8-Aw-zRR" secondAttribute="trailing" id="HUx-b4-icv"/>
+                            <constraint firstAttribute="bottom" secondItem="0oi-uh-7zE" secondAttribute="bottom" id="qBf-z2-fbd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="No8-Aw-zRR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="R6M-cl-AHS"/>
+                    <connections>
+                        <outlet property="pickerView" destination="RsX-f0-Wbi" id="TMs-I0-LYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9h-I4-3Sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>

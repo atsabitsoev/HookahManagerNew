@@ -14,6 +14,7 @@ class CreatingOrderView: UIViewController {
     private var controller: CreatingOrderController!
     
     
+    //MARK: IBOutlets
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var colViewSize: UICollectionView!
     @IBOutlet weak var colViewOptions: UICollectionView!
@@ -22,13 +23,16 @@ class CreatingOrderView: UIViewController {
     @IBOutlet weak var tfCustomerName: UITextField!
     
     
-    var currentViewInset: CGFloat = 0
+    //MARK: Vars And Lets
+    //Condition
+    private var currentViewInset: CGFloat = 0
     
-    
+    //CollectionView
     private var sizeItems: [TableSizeItem] = []
     private var optionsItems: [OptionsItem] = []
     
     
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +41,7 @@ class CreatingOrderView: UIViewController {
     }
     
     
+    //MARK: Configuration
     private func configureModule() {
         controller = CreatingOrderController(view: self)
     }
@@ -54,6 +59,8 @@ class CreatingOrderView: UIViewController {
         tfCustomerName.delegate = self
     }
     
+    
+    //MARK: Keyboard
     func hideKeyboard() {
         view.endEditing(true)
     }
@@ -73,13 +80,14 @@ class CreatingOrderView: UIViewController {
         let inset = currentViewInset
         print(inset)
         guard inset < 0 else { return }
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.2) {
             self.view.frame = self.view.frame.inset(by: UIEdgeInsets(top: -inset, left: 0, bottom: inset, right: 0))
         }
         currentViewInset = 0
     }
     
     
+    //MARK: Updating Collections
     func updateSizeItems(_ items: [TableSizeItem]) {
         sizeItems = items
         colViewSize.reloadData()
@@ -117,6 +125,7 @@ class CreatingOrderView: UIViewController {
     }
     
     
+    //MARK: Item Selected
     func setSizeItemSelected(sizeId: String, selected: Bool) {
         sizeItems = sizeItems.map { (item) -> TableSizeItem in
             var item = item
@@ -156,9 +165,17 @@ class CreatingOrderView: UIViewController {
     }
     
     
+    //MARK: Touches Began
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         controller.viewTapped()
     }
+    
+    
+    //MARK: IBActions
+    @IBAction func butChooseDateTapped(_ sender: Any) {
+        controller.butChooseDateTapped()
+    }
+    
 
 }
 
