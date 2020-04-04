@@ -22,22 +22,21 @@ class CreatingOrderController {
     private var model: CreatingOrderModel!
     
     
+    private var tables: [Table] = []
+    
+    
     func viewDidLoad() {
         view.configureView()
         view.setDelegates()
         
-        let sizeItems = [TableSizeItem(sizeId: "null", name: "Маленький", description: "Столик на двоих", selected: false),
-                         TableSizeItem(sizeId: "sdf", name: "Средний", description: "Столик на 4 человека", selected: false),
-                         TableSizeItem(sizeId: "ehr", name: "Большой", description: "Стол на 10 человек", selected: false),
-                         TableSizeItem(sizeId: "dfgfg", name: "Гигантус", description: "300 спартанцев тут едят", selected: false)]
-        view.updateSizeItems(sizeItems)
+        fetchTables()
     }
     
     func sizeSelected(id: String, selected: Bool) {
         let toBeSelected = !selected
         if toBeSelected {
-            view.updateOptionsItems([OptionsItem(tableId: "dgfdggf", options: ["Хужульдэ","Муопдв","Ещьмууц"], selected: false),
-                                     OptionsItem(tableId: "ergwrge", options: ["sfjsbfswe", "тадеев Лох"], selected: false)])
+            let optionsItems = getOptionsItems(sizeId: id)
+            view.updateOptionsItems(optionsItems)
             view.showViewOptions()
         } else {
             view.hideViewOptions()
@@ -49,5 +48,42 @@ class CreatingOrderController {
         view.setOptionsItemSelected(tableId: id, selected: !selected)
     }
     
+    
+    private func fetchTables() {
+        model.fetchTables { (tables, errorString) in
+            guard let tables = tables else {
+                print(errorString ?? "Неизвестная ошибка")
+                return
+            }
+            self.tables = tables
+            
+            let sizeItems = self.getSizeItems(from: tables)
+            self.view.updateSizeItems(sizeItems)
+        }
+    }
+    
+    private func getSizeItems(from tables: [Table]) -> [TableSizeItem] {
+        let sizeItems = tables.map { (table) -> TableSizeItem in
+            return TableSizeItem(sizeId: table.size.id,
+                                 name: table.size.name,
+                                 description: "Максимум \(table.size.count) человек(а)",
+                                 selected: false)
+        }
+        let uniqueItems = Array(Set(sizeItems))
+        let sortedItems = uniqueItems.sorted { (item1, item2) -> Bool in
+            return item1.sizeId.count < item2.sizeId.count
+        }
+        return sortedItems
+    }
+    
+    private func getOptionsItems(sizeId: String) -> [OptionsItem] {
+        let optionsItems = tables.compactMap { (table) -> OptionsItem? in
+            guard table.size.id == sizeId else { return nil }
+            return OptionsItem(tableId: table.id,
+                               options: table.options,
+                               selected: false)
+        }
+        return optionsItems
+    }
     
 }

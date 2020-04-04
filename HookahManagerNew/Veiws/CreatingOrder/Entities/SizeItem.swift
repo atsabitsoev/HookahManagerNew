@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct TableSizeItem {
+struct TableSizeItem: Hashable {
     
     var sizeId: String
     var name: String
