@@ -16,5 +16,6 @@ class OptionsCell: UICollectionViewCell {
     
     func configure(with optionsItem: OptionsItem) {
         labOptions.text = optionsItem.options.joined(separator: ",\n")
+        contentView.backgroundColor = optionsItem.selected ? .systemYellow : .systemGray
     }
 }

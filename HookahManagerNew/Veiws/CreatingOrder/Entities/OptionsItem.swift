@@ -11,5 +11,7 @@ import Foundation
 
 struct OptionsItem {
     
+    var tableId: String
     var options: [String]
+    var selected: Bool
 }

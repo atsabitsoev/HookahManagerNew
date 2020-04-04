@@ -14,4 +14,5 @@ struct TableSizeItem {
     var sizeId: String
     var name: String
     var description: String
+    var selected: Bool
 }

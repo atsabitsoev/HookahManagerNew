@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hNR-kv-PiK">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hNR-kv-PiK">
                                 <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-dB-SV0">
@@ -29,7 +29,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oqv-15-Xit">
+                                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oqv-15-Xit">
                                                 <rect key="frame" x="16" y="48.5" width="382" height="101.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iXF-Ci-Imy">
@@ -46,16 +46,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IM2-03-ppv">
-                                                                    <rect key="frame" x="36.5" y="8" width="36" height="36"/>
-                                                                    <color key="backgroundColor" red="0.28924512860000001" green="0.64230299000000002" blue="0.3727761805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="36" id="Fdd-9W-HLo"/>
-                                                                        <constraint firstAttribute="height" constant="36" id="cda-Vc-rKd"/>
-                                                                    </constraints>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Большой" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Cqj-sh-GJs">
-                                                                    <rect key="frame" x="8" y="52" width="93" height="20.5"/>
+                                                                    <rect key="frame" x="8" y="8" width="93" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -66,16 +58,31 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IM2-03-ppv">
+                                                                    <rect key="frame" x="36.5" y="36.5" width="36" height="36"/>
+                                                                    <color key="backgroundColor" red="0.28924512860000001" green="0.64230299000000002" blue="0.3727761805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="36" id="Fdd-9W-HLo"/>
+                                                                        <constraint firstAttribute="height" constant="36" id="cda-Vc-rKd"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="18"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstItem="zbC-pT-g2i" firstAttribute="top" secondItem="Cqj-sh-GJs" secondAttribute="bottom" constant="8" id="2d4-AG-Ue8"/>
-                                                                <constraint firstItem="IM2-03-ppv" firstAttribute="top" secondItem="jPI-Ua-TSz" secondAttribute="top" constant="8" id="3DE-90-ggE"/>
+                                                                <constraint firstItem="IM2-03-ppv" firstAttribute="centerY" secondItem="jPI-Ua-TSz" secondAttribute="centerY" id="5nN-5q-zPi"/>
                                                                 <constraint firstAttribute="trailing" secondItem="zbC-pT-g2i" secondAttribute="trailing" constant="8" id="75r-jr-n2p"/>
-                                                                <constraint firstItem="Cqj-sh-GJs" firstAttribute="top" secondItem="IM2-03-ppv" secondAttribute="bottom" constant="8" id="WP3-VF-SJB"/>
+                                                                <constraint firstItem="IM2-03-ppv" firstAttribute="centerX" secondItem="jPI-Ua-TSz" secondAttribute="centerX" id="Dn5-zf-Cge"/>
+                                                                <constraint firstItem="zbC-pT-g2i" firstAttribute="top" secondItem="IM2-03-ppv" secondAttribute="bottom" constant="8" id="Gnb-rk-Xi8"/>
+                                                                <constraint firstItem="IM2-03-ppv" firstAttribute="top" secondItem="Cqj-sh-GJs" secondAttribute="bottom" constant="8" id="WLY-HW-4xw"/>
                                                                 <constraint firstItem="Cqj-sh-GJs" firstAttribute="leading" secondItem="jPI-Ua-TSz" secondAttribute="leading" constant="8" id="ZeF-cM-tkd"/>
                                                                 <constraint firstItem="IM2-03-ppv" firstAttribute="centerX" secondItem="jPI-Ua-TSz" secondAttribute="centerX" id="cDD-uh-J3A"/>
                                                                 <constraint firstItem="zbC-pT-g2i" firstAttribute="leading" secondItem="jPI-Ua-TSz" secondAttribute="leading" constant="8" id="v8q-af-Bhj"/>
+                                                                <constraint firstItem="Cqj-sh-GJs" firstAttribute="top" secondItem="jPI-Ua-TSz" secondAttribute="top" constant="8" id="waE-Xe-cc6"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Cqj-sh-GJs" secondAttribute="trailing" constant="8" id="xF5-wF-Tto"/>
                                                                 <constraint firstAttribute="bottom" secondItem="zbC-pT-g2i" secondAttribute="bottom" constant="8" id="zp2-ym-LJl"/>
                                                             </constraints>
@@ -97,7 +104,7 @@
                                             <constraint firstItem="oqv-15-Xit" firstAttribute="leading" secondItem="Spw-dB-SV0" secondAttribute="leading" constant="16" id="Tsj-A1-vWW"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="YO1-AL-cE5" secondAttribute="trailing" constant="16" id="UBs-JB-SPd"/>
                                             <constraint firstAttribute="trailing" secondItem="oqv-15-Xit" secondAttribute="trailing" constant="16" id="YGe-q3-lDT"/>
-                                            <constraint firstItem="YO1-AL-cE5" firstAttribute="top" secondItem="Spw-dB-SV0" secondAttribute="topMargin" constant="8" id="k9P-RR-ZfC"/>
+                                            <constraint firstItem="YO1-AL-cE5" firstAttribute="top" secondItem="Spw-dB-SV0" secondAttribute="top" constant="16" id="k9P-RR-ZfC"/>
                                             <constraint firstItem="YO1-AL-cE5" firstAttribute="leading" secondItem="Spw-dB-SV0" secondAttribute="leading" constant="16" id="q2L-wq-Ykd"/>
                                             <constraint firstItem="oqv-15-Xit" firstAttribute="top" secondItem="YO1-AL-cE5" secondAttribute="bottom" constant="12" id="tMb-S6-Vfi"/>
                                         </constraints>
@@ -111,7 +118,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W0P-Ht-3ig">
+                                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W0P-Ht-3ig">
                                                 <rect key="frame" x="16" y="40.5" width="382" height="109.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t5F-xW-zQO">
@@ -200,6 +207,8 @@
                     <connections>
                         <outlet property="colViewOptions" destination="W0P-Ht-3ig" id="WId-bV-xK8"/>
                         <outlet property="colViewSize" destination="oqv-15-Xit" id="Uej-Mf-XR5"/>
+                        <outlet property="viewOptions" destination="LoF-hl-mL5" id="8zc-Kx-Zmw"/>
+                        <outlet property="viewTableSize" destination="Spw-dB-SV0" id="6Cm-Nz-qHz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nki-Ur-9VA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

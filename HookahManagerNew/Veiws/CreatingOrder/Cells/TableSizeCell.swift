@@ -19,5 +19,6 @@ class TableSizeCell: UICollectionViewCell {
     func configure(with sizeItem: TableSizeItem) {
         labName.text = sizeItem.name
         labDescription.text = sizeItem.description
+        contentView.backgroundColor = sizeItem.selected ? .systemYellow : .systemGray
     }
 }
