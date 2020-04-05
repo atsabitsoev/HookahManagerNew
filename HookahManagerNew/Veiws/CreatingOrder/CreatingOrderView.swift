@@ -165,6 +165,16 @@ class CreatingOrderView: UIViewController {
     }
     
     
+    //MARK: Navigation
+    func showCOSelectDateView(dayItems: [DayItem]) {
+        let storyboard = UIStoryboard(name: "CreatingOrder", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "COSelectDateView") as! COSelectDateView
+        vc.configureView(dayItems: dayItems,
+                         delegate: self)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     //MARK: Touches Began
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         controller.viewTapped()
@@ -177,6 +187,15 @@ class CreatingOrderView: UIViewController {
     }
     
 
+}
+
+
+//MARK: COSelectDateView Delegate
+extension CreatingOrderView: COSelectDateViewDelegate {
+    
+    func dateSelected(_ date: Date) {
+        print("Дата выбрана: \(date.string(in: "d MMMM, HH:mm"))")
+    }
 }
 
 

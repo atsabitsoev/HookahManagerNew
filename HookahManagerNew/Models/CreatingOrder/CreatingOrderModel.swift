@@ -20,6 +20,19 @@ class CreatingOrderModel {
         }
     }
     
+    func fetchDaysDatesDict(tableId: String,
+                            _ handler: @escaping ([Int: [Date]]?, String?) -> ()) {
+        
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (_) in
+            
+            let currentDate = Date()
+            let dict = [1: [currentDate.addingTimeInterval(24*60*60), currentDate.addingTimeInterval(24*60*60 + 60*60)],
+                        2: [currentDate.addingTimeInterval(2 * 24*60*60), currentDate.addingTimeInterval(2 * 24*60*60 + 60*60)],
+                        3: [currentDate.addingTimeInterval(3*24*60*60), currentDate.addingTimeInterval(3*24*60*60 + 30*60)]]
+            handler(dict, nil)
+        }
+    }
+    
     
     private func getMokTables() -> [Table] {
         let table1 = Table(id: "1",

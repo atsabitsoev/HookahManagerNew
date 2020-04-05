@@ -9,6 +9,12 @@
 import UIKit
 
 
+protocol COSelectDateViewDelegate {
+    
+    func dateSelected(_ date: Date) -> ()
+}
+
+
 enum COSelectDateViewState {
     case days
     case times
@@ -16,6 +22,9 @@ enum COSelectDateViewState {
 
 
 class COSelectDateView: UIViewController {
+    
+    
+    var delegate: COSelectDateViewDelegate?
     
     
     @IBOutlet weak var pickerView: UIPickerView!
@@ -33,19 +42,18 @@ class COSelectDateView: UIViewController {
 
         pickerView.delegate = self
         pickerView.dataSource = self
-        setMokDayItems()
     }
     
-    private func setMokDayItems() {
-        let item1 = DayItem(id: 1,
-                            dayString: "5 марта",
-                            times: [Date(timeIntervalSince1970: 1583431200),
-                                    Date(timeIntervalSince1970: 1583431200 + 60*60)])
-        let item2 = DayItem(id: 2,
-                            dayString: "6 марта",
-                            times: [Date(timeIntervalSince1970: 1583506800),
-                                    Date(timeIntervalSince1970: 1583506800 + 30*60)])
-        self.dayItems = [item1, item2]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pickerView.reloadAllComponents()
+    }
+    
+    
+    func configureView(dayItems: [DayItem],
+                       delegate: COSelectDateViewDelegate) {
+        self.delegate = delegate
+        self.dayItems = dayItems
     }
     
     
@@ -72,8 +80,10 @@ class COSelectDateView: UIViewController {
             reloadPickerView()
         case .times:
             let selectedDateIndex = pickerView.selectedRow(inComponent: 0)
-            let selectedDate = selectedDayItem?.times[selectedDateIndex]
-            print(selectedDate?.string(in: "d MMMM, HH:mm") ?? "Невозможно определить выбранную дату")
+            if let selectedDate = selectedDayItem?.times[selectedDateIndex] {
+                delegate?.dateSelected(selectedDate)
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

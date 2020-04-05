@@ -23,6 +23,7 @@ class CreatingOrderController {
     
     
     private var tables: [Table] = []
+    private var selectedTableId: String?
     
     
     func viewDidLoad() {
@@ -60,11 +61,33 @@ class CreatingOrderController {
     }
     
     func optionsSelected(id: String, selected: Bool) {
+        selectedTableId = id
         view.setOptionsItemSelected(tableId: id, selected: !selected)
     }
     
+    
     func butChooseDateTapped() {
-        print("Выбираем дату тут")
+        guard let tableId = selectedTableId else {
+            print("Не удалось получить id выбранного столика")
+            return
+        }
+        model.fetchDaysDatesDict(tableId: tableId) { (dict, errorString) in
+            guard let dict = dict else {
+                print(errorString ?? "Неизвестная ошибка")
+                return
+            }
+            let sortedDict = dict.sorted { (item1, item2) -> Bool in
+                return item1.key < item2.key
+            }
+            let dayItems = sortedDict.map { (key, value) -> DayItem in
+                let dayDate = Date().addingTimeInterval(TimeInterval(key * 24 * 60 * 60))
+                let dayString = dayDate.string(in: "d MMMM")
+                return DayItem(id: key,
+                               dayString: dayString,
+                               times: value)
+            }
+            self.view.showCOSelectDateView(dayItems: dayItems)
+        }
     }
     
     

@@ -62,7 +62,7 @@
 		AC7EF207243711D50059B1C2 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		AC7EF209243712DE0059B1C2 /* TableSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSize.swift; sourceTree = "<group>"; };
 		AC7EF20C2437177D0059B1C2 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
-		ACA4FFBA243676B90072A377 /* HookahManagerNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahManagerNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA4FFBA243676B90072A377 /* Столик Бронь.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Столик Бронь.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA4FFBD243676B90072A377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA4FFBF243676B90072A377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACA4FFC6243676BB0072A377 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		ACA4FFBB243676B90072A377 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ACA4FFBA243676B90072A377 /* HookahManagerNew.app */,
+				ACA4FFBA243676B90072A377 /* Столик Бронь.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			);
 			name = HookahManagerNew;
 			productName = HookahManagerNew;
-			productReference = ACA4FFBA243676B90072A377 /* HookahManagerNew.app */;
+			productReference = ACA4FFBA243676B90072A377 /* Столик Бронь.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -582,7 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Столик Бронь";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -602,7 +602,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Столик Бронь";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
