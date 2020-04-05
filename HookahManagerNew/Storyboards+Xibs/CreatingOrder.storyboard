@@ -223,6 +223,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="butChooseDate" destination="Wb2-gX-dFK" id="MlD-E4-Vx1"/>
                         <outlet property="colViewOptions" destination="W0P-Ht-3ig" id="WId-bV-xK8"/>
                         <outlet property="colViewSize" destination="oqv-15-Xit" id="Uej-Mf-XR5"/>
                         <outlet property="stackView" destination="hNR-kv-PiK" id="9NU-W4-14T"/>

@@ -24,10 +24,12 @@ class CreatingOrderController {
     
     private var tables: [Table] = []
     private var selectedTableId: String?
+    private var customerName: String?
     
     
     func viewDidLoad() {
         view.configureView()
+        view.enableButChooseDate(false)
         view.setDelegates()
         
         fetchTables()
@@ -38,7 +40,9 @@ class CreatingOrderController {
         view.hideKeyboard()
     }
     
-    func tfReturned() {
+    func tfReturned(name: String?) {
+        self.customerName = name
+        checkReadinessToChooseDate()
         view.viewDown()
         view.hideKeyboard()
     }
@@ -49,6 +53,9 @@ class CreatingOrderController {
     
     
     func sizeSelected(id: String, selected: Bool) {
+        selectedTableId = nil
+        checkReadinessToChooseDate()
+        
         let toBeSelected = !selected
         if toBeSelected {
             let optionsItems = getOptionsItems(sizeId: id)
@@ -61,8 +68,10 @@ class CreatingOrderController {
     }
     
     func optionsSelected(id: String, selected: Bool) {
-        selectedTableId = id
-        view.setOptionsItemSelected(tableId: id, selected: !selected)
+        let toBeSelected = !selected
+        selectedTableId = toBeSelected ? id : nil
+        checkReadinessToChooseDate()
+        view.setOptionsItemSelected(tableId: id, selected: toBeSelected)
     }
     
     
@@ -126,6 +135,16 @@ class CreatingOrderController {
                                selected: false)
         }
         return optionsItems
+    }
+    
+    
+    private func checkReadinessToChooseDate() {
+        var isReady = false
+        if let _ = selectedTableId,
+            let name = customerName, !name.isEmpty {
+            isReady = true
+        }
+        view.enableButChooseDate(isReady)
     }
     
 }

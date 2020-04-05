@@ -21,6 +21,7 @@ class CreatingOrderView: UIViewController {
     @IBOutlet weak var viewTableSize: UIView!
     @IBOutlet weak var viewOptions: UIView!
     @IBOutlet weak var tfCustomerName: UITextField!
+    @IBOutlet weak var butChooseDate: UIButton!
     
     
     //MARK: Vars And Lets
@@ -57,6 +58,18 @@ class CreatingOrderView: UIViewController {
         colViewOptions.delegate = self
         colViewOptions.dataSource = self
         tfCustomerName.delegate = self
+    }
+    
+    
+    //MARK: ButChooseDate Enabling
+    func enableButChooseDate(_ enable: Bool) {
+        if enable {
+            butChooseDate.isEnabled = true
+            butChooseDate.alpha = 1
+        } else {
+            butChooseDate.isEnabled = false
+            butChooseDate.alpha = 0.5
+        }
     }
     
     
@@ -255,7 +268,7 @@ extension CreatingOrderView: UICollectionViewDelegate, UICollectionViewDataSourc
 extension CreatingOrderView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        controller.tfReturned()
+        controller.tfReturned(name: textField.text)
         return true
     }
     
