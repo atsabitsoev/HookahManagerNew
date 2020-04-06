@@ -18,9 +18,14 @@ class CreatingOrderModel {
     private var weekDaysDates: [Int: (startDate: Date, endDate: Date)] = [:]
     
     
+    //MARK: Fetch Tables
     func fetchTables(_ handler: @escaping ([Table]?, String?) -> ()) {
         
-        db.collection("restaurants").document("iX2jYDuiTxBpofOUHcvL").collection("tables").getDocuments { (querySnap, error) in
+        db.collection("restaurants")
+            .document("iX2jYDuiTxBpofOUHcvL")
+            .collection("tables")
+            .getDocuments { (querySnap, error) in
+                
             guard let documents = querySnap?.documents else {
                 handler(nil, error?.localizedDescription)
                 print(error)
@@ -58,6 +63,7 @@ class CreatingOrderModel {
     }
     
     
+    //MARK: Fetch Dates
     func fetchDaysDatesDict(tableId: String,
                             _ handler: @escaping ([Int: [Date]]?, String?) -> ()) {
         
@@ -72,6 +78,7 @@ class CreatingOrderModel {
         }
         let calendar = Calendar.current
         let availableDates = freeDates.filter { (date) -> Bool in
+            
             let weekDay = calendar.component(.weekday, from: date)
             if let startDate = weekDaysDates[weekDay]?.startDate,
                 let endDate = weekDaysDates[weekDay]?.endDate {
@@ -82,22 +89,26 @@ class CreatingOrderModel {
                 let currentDayStartDate = dateFormatter.date(from: dateString)
                 if let resultStartDate = currentDayStartDate?.addingTimeInterval(startDate.timeIntervalSince1970),
                     let resultEndDate = currentDayStartDate?.addingTimeInterval(endDate.timeIntervalSince1970) {
-                    return date >= resultStartDate && date <= resultEndDate
+
+                    let isInDiapazon = date >= resultStartDate && date <= resultEndDate
+                    return isInDiapazon
                 }
             }
             return false
         }
         
+        let currentDate = Date()
+        let nextDayDateString = currentDate.addingTimeInterval(TimeInterval(24*60*60)).string(in: "dd.MM.yyyy")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        guard let nextDayDate = dateFormatter.date(from: nextDayDateString) else {
+            handler(nil, "Дата следующего дня не получена")
+            return
+        }
+        
         var daysDatesDict: [Int: [Date]] = [:]
         availableDates.forEach { (date) in
-            let currentDate = Date()
-            let currentDateString = currentDate.addingTimeInterval(TimeInterval(24*60*60)).string(in: "dd.MM.yyyy")
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            guard let nextDayDate = dateFormatter.date(from: currentDateString) else {
-                handler(nil, "Дата следующего дня не получена")
-                return
-            }
+            
             if date.timeIntervalSince1970 - nextDayDate.timeIntervalSince1970 < 0 {
                 if daysDatesDict[0] == nil {
                     daysDatesDict[0] = [date]
@@ -115,14 +126,41 @@ class CreatingOrderModel {
             }
         }
         handler(daysDatesDict, nil)
-        let daysDatesDictStrings = daysDatesDict.map { (key, value) -> String in
-            let datesStrings = value.map { (date) -> String in
-                return date.string(in: "d MMMM HH:mm")
-            }
-            return "\(key)\n\(datesStrings.joined(separator: "\n"))"
-        }
-        print(daysDatesDictStrings.joined(separator: "\n"))
     }
+    
+    
+    //MARK: Create Order
+    func createOrder(order: Order,
+                     _ handler: @escaping (Bool, String?) -> ()) {
+        
+        let randomNumber = Int.random(in: 100...999)
+        let dateString = order.date.string(in: "ddMMyyHHmm")
+        let orderNumber = "\(dateString)\(randomNumber)"
+        let tableDict: [String: Any] = ["options": order.table.options,
+                                        "tableId": order.table.id,
+                                        "size": ["maxCount": order.table.size.count,
+                                                 "name": order.table.size.name,
+                                                 "tableSizeId": order.table.size.id]]
+        let orderDict: [String: Any] = ["customerName": order.customerName,
+                                        "dateTime": Timestamp(date: order.date),
+                                        "number": orderNumber,
+                                        "status": order.status.rawValue,
+                                        "table": tableDict]
+        db.collection("restaurants")
+            .document("iX2jYDuiTxBpofOUHcvL")
+            .collection("orders")
+            .addDocument(data: orderDict) { (error) in
+                
+            if let error = error {
+                print(error)
+                handler(false, error.localizedDescription)
+                return
+            } else {
+                handler(true, nil)
+            }
+        }
+    }
+    
     
     
     //MARK: Private Funcs
@@ -158,25 +196,24 @@ class CreatingOrderModel {
                 self.weekDaysDates[self.getWeekDayNumber(by: weekDayString)] = (startDate: startDate, endDate: endDate)
             }
         }
-        print(weekDaysDates)
     }
     
     private func getWeekDayNumber(by string: String) -> Int {
         switch string {
         case "monday":
-            return 1
-        case "tuesday":
             return 2
-        case "wednesDay":
+        case "tuesday":
             return 3
-        case "thursDay":
+        case "wednesDay":
             return 4
-        case "friday":
+        case "thursDay":
             return 5
-        case "saturday":
+        case "friday":
             return 6
-        case "sunday":
+        case "saturday":
             return 7
+        case "sunday":
+            return 1
         default:
             return 0
         }

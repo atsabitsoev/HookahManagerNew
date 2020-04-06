@@ -75,6 +75,31 @@ class CreatingOrderController {
     }
     
     
+    func dateSelected(_ date: Date) {
+        
+        let selectedTable = tables.filter { (table) -> Bool in
+            return self.selectedTableId == table.id
+        }.first
+        guard let customerName = self.customerName,
+            let table = selectedTable else { return }
+        let order = Order(id: "",
+                          customerName: customerName ,
+                          number: "",
+                          date: date,
+                          status: .approved,
+                          table: table)
+        model.createOrder(order: order) { (succeed, errorString) in
+            if succeed {
+                self.view.alertOrderCreated {
+                    self.view.goBackToMain()
+                }
+            } else {
+                print(errorString ?? "Неизвестная ошибка")
+            }
+        }
+    }
+    
+    
     func butChooseDateTapped() {
         guard let tableId = selectedTableId else {
             print("Не удалось получить id выбранного столика")
@@ -117,14 +142,11 @@ class CreatingOrderController {
         let sizeItems = tables.map { (table) -> TableSizeItem in
             return TableSizeItem(sizeId: table.size.id,
                                  name: table.size.name,
-                                 description: "Максимум \(table.size.count) человек(а)",
+                                 customerCount: table.size.count,
                                  selected: false)
         }
         let uniqueItems = Array(Set(sizeItems))
-        let sortedItems = uniqueItems.sorted { (item1, item2) -> Bool in
-            return item1.sizeId.count < item2.sizeId.count
-        }
-        return sortedItems
+        return uniqueItems
     }
     
     private func getOptionsItems(sizeId: String) -> [OptionsItem] {

@@ -102,7 +102,9 @@ class CreatingOrderView: UIViewController {
     
     //MARK: Updating Collections
     func updateSizeItems(_ items: [TableSizeItem]) {
-        sizeItems = items
+        sizeItems = items.sorted(by: { (item1, item2) -> Bool in
+            return item1.customerCount < item2.customerCount
+        })
         colViewSize.reloadData()
     }
     
@@ -178,6 +180,12 @@ class CreatingOrderView: UIViewController {
     }
     
     
+    //MARK: Alerts
+    func alertOrderCreated(_ handler: @escaping () -> ()) {
+        self.alertSuccess("Забронировано!", completion: handler)
+    }
+    
+    
     //MARK: Navigation
     func showCOSelectDateView(dayItems: [DayItem]) {
         let storyboard = UIStoryboard(name: "CreatingOrder", bundle: nil)
@@ -185,6 +193,10 @@ class CreatingOrderView: UIViewController {
         vc.configureView(dayItems: dayItems,
                          delegate: self)
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    func goBackToMain() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     
@@ -207,7 +219,7 @@ class CreatingOrderView: UIViewController {
 extension CreatingOrderView: COSelectDateViewDelegate {
     
     func dateSelected(_ date: Date) {
-        print("Дата выбрана: \(date.string(in: "d MMMM, HH:mm"))")
+        controller.dateSelected(date)
     }
 }
 

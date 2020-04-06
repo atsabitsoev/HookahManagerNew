@@ -13,6 +13,11 @@ struct TableSizeItem: Hashable {
     
     var sizeId: String
     var name: String
-    var description: String
+    var customerCount: Int
+    var description: String {
+        get {
+            return "Максимум \(customerCount) человек(а)"
+        }
+    }
     var selected: Bool
 }
