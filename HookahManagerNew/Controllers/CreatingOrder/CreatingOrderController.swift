@@ -94,7 +94,7 @@ class CreatingOrderController {
                     self.view.goBackToMain()
                 }
             } else {
-                print(errorString ?? "Неизвестная ошибка")
+                self.view.alertError(errorString)
             }
         }
     }

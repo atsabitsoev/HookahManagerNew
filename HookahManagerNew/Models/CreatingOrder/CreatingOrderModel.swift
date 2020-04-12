@@ -8,12 +8,14 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFunctions
 
 
 class CreatingOrderModel {
     
     
     private let db = Firestore.firestore()
+    private lazy var functions = Functions.functions()
     private var tableOrderedDatesDict: [String: [Date]] = [:]
     private var weekDaysDates: [Int: (startDate: Date, endDate: Date)] = [:]
     
@@ -43,9 +45,9 @@ class CreatingOrderModel {
                 let options = docData["options"] as? [String]
                 let table = Table(id: tableId, size: size, options: options ?? [])
                 
-                let datesTS = docData["orderedDates"] as? [Timestamp]
-                let dates = datesTS?.map({ (timeStamp) -> Date in
-                    return timeStamp.dateValue()
+                let datesInt = docData["orderedDates"] as? [Int]
+                let dates = datesInt?.map({ (dateInt) -> Date in
+                    return Date(timeIntervalSince1970: TimeInterval(dateInt))
                 }) ?? []
                 let dictItem = (key: tableId, value: dates)
                 self.tableOrderedDatesDict[dictItem.key] = dictItem.value
@@ -133,31 +135,32 @@ class CreatingOrderModel {
     func createOrder(order: Order,
                      _ handler: @escaping (Bool, String?) -> ()) {
         
+        let numberDateString = order.date.string(in: "yyyyMMddHHmm")
         let randomNumber = Int.random(in: 100...999)
-        let dateString = order.date.string(in: "ddMMyyHHmm")
-        let orderNumber = "\(dateString)\(randomNumber)"
-        let tableDict: [String: Any] = ["options": order.table.options,
-                                        "tableId": order.table.id,
-                                        "size": ["maxCount": order.table.size.count,
-                                                 "name": order.table.size.name,
-                                                 "tableSizeId": order.table.size.id]]
-        let orderDict: [String: Any] = ["customerName": order.customerName,
-                                        "dateTime": Timestamp(date: order.date),
-                                        "number": orderNumber,
-                                        "status": order.status.rawValue,
-                                        "table": tableDict]
-        db.collection("restaurants")
-            .document("iX2jYDuiTxBpofOUHcvL")
-            .collection("orders")
-            .addDocument(data: orderDict) { (error) in
-                
-            if let error = error {
-                print(error)
-                handler(false, error.localizedDescription)
+        let number = "\(numberDateString)\(randomNumber)"
+        let orderDict: [String: Any] = ["restaurantId": "iX2jYDuiTxBpofOUHcvL",
+                                        "order": ["customerName": order.customerName,
+                                                  "status": order.status.rawValue,
+                                                  "number": number,
+                                                  "dateTime": Int(order.date.timeIntervalSince1970),
+                                                  "table": ["tableId": order.table.id,
+                                                            "options": order.table.options,
+                                                            "size": ["tableSizeId": order.table.size.id,
+                                                                     "name": order.table.size.name,
+                                                                     "maxCount": order.table.size.count]]]
+                                        ]
+        functions.httpsCallable("createOrder").call(orderDict) { (result, error) in
+            guard let resultDict = (result?.data) as? [String: Any] else {
+                handler(false, error?.localizedDescription)
                 return
-            } else {
-                handler(true, nil)
             }
+            let code = resultDict["code"] as? Int
+            guard code == 200 else {
+                let message = resultDict["message"] as? String
+                handler(false, message ?? "Низвестная ошибка")
+                return
+            }
+            handler(true, nil)
         }
     }
     

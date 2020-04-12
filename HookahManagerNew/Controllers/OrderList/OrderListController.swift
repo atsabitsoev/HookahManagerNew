@@ -71,9 +71,13 @@ class OrderListController {
             view.deleteItem(orderId: orderId)
         }
         
-        model.changeOrderStatus { (succeed, error) in
+        model.changeOrderStatus(orderId: orderId,
+                                status: status.rawValue) { (succeed, errorString) in
+                                    
             if succeed {
                 self.orders[index] = newOrder
+            } else {
+                self.view.alertError(errorString ?? "Неизвестная ошибка")
             }
             self.showOrderItems(orders: self.orders)
         }

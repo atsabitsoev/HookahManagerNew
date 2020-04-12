@@ -8,9 +8,14 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFunctions
 
 
 class OrderListModel {
+    
+    
+    private lazy var functions = Functions.functions()
+    
     
     func startOrdersListener(_ handler: @escaping ([Order]?, Error?) -> ()) {
         
@@ -31,7 +36,7 @@ class OrderListModel {
                     let docData = document.data()
                     let customerName = docData["customerName"] as? String
                     let number = docData["number"] as? String
-                    let date = (docData["dateTime"] as? Timestamp)?.dateValue()
+                    let date = Date(timeIntervalSince1970: TimeInterval((docData["dateTime"] as? Int) ?? 0))
                     let status = OrderStatus(rawValue: (docData["status"] as? String) ?? "waiting")
                     let tableData = docData["table"] as? [String: Any]
                     let tableId = tableData?["tableId"] as? String
@@ -43,7 +48,7 @@ class OrderListModel {
                     return Order(id: orderId,
                                  customerName: customerName ?? "Неизвестный посетитель",
                                  number: number ?? "null",
-                                 date: date ?? Date(timeIntervalSince1970: 0),
+                                 date: date,
                                  status: status ?? .waiting,
                                  table: Table(id: tableId ?? "null",
                                               size: TableSize(id: tableSizeId ?? "null",
@@ -55,10 +60,30 @@ class OrderListModel {
         }
     }
     
-    func changeOrderStatus(_ handler: @escaping (Bool, Error?) -> ()) {
-        Timer.scheduledTimer(withTimeInterval: 0.3,
-                             repeats: false) { (_) in
-                                handler(true, nil)
+    func changeOrderStatus(orderId: String,
+                           status: String,
+                           _ handler: @escaping (Bool, String?) -> ()) {
+        
+        let restaurantId = "iX2jYDuiTxBpofOUHcvL"
+        let dict: [String: Any] = ["orderId": orderId,
+                                   "restaurantId": restaurantId,
+                                   "status": status]
+        functions.httpsCallable("changeOrderStatus").call(dict) { (result, error) in
+            guard let result = result else {
+                handler(false, error?.localizedDescription)
+                return
+            }
+            let resultData = result.data as? [String: Any]
+            let code = resultData?["code"] as? Int
+            guard code == 200 else {
+                if let message = resultData?["message"] as? String {
+                    handler(false, message)
+                } else {
+                    handler(false, "Неизвестная ошибка")
+                }
+                return
+            }
+            handler(true, nil)
         }
     }
 }
