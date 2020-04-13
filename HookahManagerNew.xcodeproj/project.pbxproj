@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		730836B26043015394599057 /* Pods_HookahManagerNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282A2B60A98460AC5B4A3673 /* Pods_HookahManagerNew.framework */; };
-		AC2ECCBA2437568A002CF21C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2ECCB924375689002CF21C /* GoogleService-Info.plist */; };
+		AC1BFE3824437F7600397F11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1BFE3724437F7600397F11 /* GoogleService-Info.plist */; };
 		AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC305372243677A4002AA83C /* MainTabBar.storyboard */; };
 		AC30537524367883002AA83C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30537424367883002AA83C /* OrderList.storyboard */; };
 		AC30537724367A6F002AA83C /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537624367A6F002AA83C /* OrderListView.swift */; };
@@ -44,7 +44,8 @@
 		282A2B60A98460AC5B4A3673 /* Pods_HookahManagerNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahManagerNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A224026CCE5E8548E3AA03 /* Pods-HookahManagerNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManagerNew.debug.xcconfig"; path = "Target Support Files/Pods-HookahManagerNew/Pods-HookahManagerNew.debug.xcconfig"; sourceTree = "<group>"; };
 		A67E77A6FE1F3B616A69F799 /* Pods-HookahManagerNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManagerNew.release.xcconfig"; path = "Target Support Files/Pods-HookahManagerNew/Pods-HookahManagerNew.release.xcconfig"; sourceTree = "<group>"; };
-		AC2ECCB924375689002CF21C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC1BFE362443797100397F11 /* Столик Бронь.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Столик Бронь.entitlements"; sourceTree = "<group>"; };
+		AC1BFE3724437F7600397F11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC305372243677A4002AA83C /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		AC30537424367883002AA83C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		AC30537624367A6F002AA83C /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
@@ -241,6 +242,7 @@
 		ACA4FFBC243676B90072A377 /* HookahManagerNew */ = {
 			isa = PBXGroup;
 			children = (
+				AC1BFE362443797100397F11 /* Столик Бронь.entitlements */,
 				AC7EF20B2437175F0059B1C2 /* Extensions */,
 				AC30537124367775002AA83C /* Storyboards+Xibs */,
 				AC30536E24367745002AA83C /* Veiws */,
@@ -248,7 +250,7 @@
 				AC3053702436775E002AA83C /* Models */,
 				ACA4FFD1243676C80072A377 /* SupportingFiles */,
 				ACA4FFCB243676BB0072A377 /* Info.plist */,
-				AC2ECCB924375689002CF21C /* GoogleService-Info.plist */,
+				AC1BFE3724437F7600397F11 /* GoogleService-Info.plist */,
 			);
 			path = HookahManagerNew;
 			sourceTree = "<group>";
@@ -366,7 +368,7 @@
 				ACA4FFCA243676BB0072A377 /* LaunchScreen.storyboard in Resources */,
 				ACA4FFC7243676BB0072A377 /* Assets.xcassets in Resources */,
 				AC30537524367883002AA83C /* OrderList.storyboard in Resources */,
-				AC2ECCBA2437568A002CF21C /* GoogleService-Info.plist in Resources */,
+				AC1BFE3824437F7600397F11 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +583,10 @@
 			baseConfigurationReference = 67A224026CCE5E8548E3AA03 /* Pods-HookahManagerNew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "HookahManagerNew/Столик Бронь.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -589,8 +594,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.gvidonmanager;
 				PRODUCT_NAME = "Столик Бронь";
+				PROVISIONING_PROFILE_SPECIFIER = GvidonManagerProf;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -601,7 +608,10 @@
 			baseConfigurationReference = A67E77A6FE1F3B616A69F799 /* Pods-HookahManagerNew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "HookahManagerNew/Столик Бронь.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -609,8 +619,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.gvidonmanager;
 				PRODUCT_NAME = "Столик Бронь";
+				PROVISIONING_PROFILE_SPECIFIER = GvidonManagerProf;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -11,5 +11,6 @@ target 'HookahManagerNew' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Functions'
+  pod 'Firebase/Auth'
 
 end
