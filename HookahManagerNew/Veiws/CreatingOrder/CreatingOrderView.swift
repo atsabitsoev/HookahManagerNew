@@ -44,7 +44,7 @@ class CreatingOrderView: UIViewController {
     
     //MARK: Configuration
     private func configureModule() {
-        controller = CreatingOrderController(view: self)
+        controller = CreatingOrderController(view: self, model: CreatingOrderModel())
     }
     
     func configureView() {

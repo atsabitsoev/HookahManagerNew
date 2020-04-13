@@ -282,6 +282,12 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - PromisesObjC (1.2.8)
 
 DEPENDENCIES:
@@ -290,8 +296,11 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Functions
   - FirebaseFirestoreSwift
+  - PhoneNumberKit (~> 3.1)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - PhoneNumberKit
   trunk:
     - abseil
     - BoringSSL-GRPC
@@ -340,8 +349,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 6f36652fcff158646bd4d8360a608239fe6daf12
+PODFILE CHECKSUM: 9dade5f86bceff13e31e2f49834352891d5a272e
 
 COCOAPODS: 1.8.3

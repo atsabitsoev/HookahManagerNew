@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TYu-fh-lMW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Авторизация-->
+        <scene sceneID="9lv-ov-ThE">
+            <objects>
+                <viewController id="j6z-ma-kOf" customClass="AuthEnterPhoneVC" customModule="Столик_Бронь" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Onq-gK-t2M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+7 (000) 000-00-00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXR-te-OdJ" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                <rect key="frame" x="24" y="330" width="366" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Oqe-rM-WTR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfChanged:" destination="j6z-ma-kOf" eventType="editingChanged" id="bya-iP-GYO"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер телефона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HEM-l5-q3L">
+                                <rect key="frame" x="24" y="277" width="366" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDr-Bx-IYA">
+                                <rect key="frame" x="24" y="390" width="366" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Uq-eY-Trm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Ввести код">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="butEnterCodeTapped:" destination="j6z-ma-kOf" eventType="touchUpInside" id="7qv-tv-BOl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wXR-te-OdJ" firstAttribute="top" secondItem="HEM-l5-q3L" secondAttribute="bottom" constant="24" id="6KH-aS-M2k"/>
+                            <constraint firstItem="eDr-Bx-IYA" firstAttribute="top" secondItem="wXR-te-OdJ" secondAttribute="bottom" constant="24" id="E5n-bp-Ln8"/>
+                            <constraint firstItem="HEM-l5-q3L" firstAttribute="leading" secondItem="OSb-Jo-VwG" secondAttribute="leading" constant="24" id="FDW-AH-Tab"/>
+                            <constraint firstItem="OSb-Jo-VwG" firstAttribute="trailing" secondItem="wXR-te-OdJ" secondAttribute="trailing" constant="24" id="IVy-I3-bUQ"/>
+                            <constraint firstItem="HEM-l5-q3L" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OSb-Jo-VwG" secondAttribute="top" constant="24" id="MZo-w8-5Wf"/>
+                            <constraint firstItem="wXR-te-OdJ" firstAttribute="centerY" secondItem="Onq-gK-t2M" secondAttribute="centerY" constant="-100" id="UKI-2I-RJ6"/>
+                            <constraint firstItem="wXR-te-OdJ" firstAttribute="leading" secondItem="OSb-Jo-VwG" secondAttribute="leading" constant="24" id="hRq-gZ-Gvy"/>
+                            <constraint firstItem="eDr-Bx-IYA" firstAttribute="leading" secondItem="OSb-Jo-VwG" secondAttribute="leading" constant="24" id="hse-vO-TxG"/>
+                            <constraint firstItem="OSb-Jo-VwG" firstAttribute="trailing" secondItem="HEM-l5-q3L" secondAttribute="trailing" constant="24" id="n23-ch-Gy0"/>
+                            <constraint firstItem="OSb-Jo-VwG" firstAttribute="trailing" secondItem="eDr-Bx-IYA" secondAttribute="trailing" constant="24" id="rvn-JO-WaG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OSb-Jo-VwG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Авторизация" id="wjY-Sw-BG3"/>
+                    <connections>
+                        <outlet property="butEnterCode" destination="eDr-Bx-IYA" id="nnV-iI-OIo"/>
+                        <outlet property="tfPhone" destination="wXR-te-OdJ" id="NXk-pS-naL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xx6-ZT-fur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="99.776785714285708"/>
+        </scene>
+        <!--Авторизация-->
+        <scene sceneID="QSf-mt-8bq">
+            <objects>
+                <viewController storyboardIdentifier="AuthEnterCodeVC" id="oFS-Hy-wNb" customClass="AuthEnterCodeVC" customModule="Столик_Бронь" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nIy-rf-Ho2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="XXXX" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wv-mj-5TQ">
+                                <rect key="frame" x="24" y="330" width="366" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Tvv-qL-ENe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="send" textContentType="one-time-code"/>
+                                <connections>
+                                    <action selector="tfCodeChanged:" destination="oFS-Hy-wNb" eventType="editingChanged" id="MiC-Vo-nw2"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите код из СМС" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="48A-cS-7CC">
+                                <rect key="frame" x="24" y="277" width="366" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="48A-cS-7CC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="agU-f5-VYx" secondAttribute="top" constant="24" id="ENJ-u3-kOd"/>
+                            <constraint firstItem="6wv-mj-5TQ" firstAttribute="top" secondItem="48A-cS-7CC" secondAttribute="bottom" constant="24" id="K40-Nj-Cdo"/>
+                            <constraint firstItem="agU-f5-VYx" firstAttribute="trailing" secondItem="6wv-mj-5TQ" secondAttribute="trailing" constant="24" id="Wid-wa-nc3"/>
+                            <constraint firstItem="agU-f5-VYx" firstAttribute="trailing" secondItem="48A-cS-7CC" secondAttribute="trailing" constant="24" id="YCg-Fy-XuO"/>
+                            <constraint firstItem="48A-cS-7CC" firstAttribute="leading" secondItem="agU-f5-VYx" secondAttribute="leading" constant="24" id="ZZj-Xw-G1z"/>
+                            <constraint firstItem="6wv-mj-5TQ" firstAttribute="leading" secondItem="agU-f5-VYx" secondAttribute="leading" constant="24" id="l5C-Ni-27o"/>
+                            <constraint firstItem="6wv-mj-5TQ" firstAttribute="centerY" secondItem="nIy-rf-Ho2" secondAttribute="centerY" constant="-100" id="v0O-Nd-Ol6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="agU-f5-VYx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Авторизация" id="aVE-d8-oLF"/>
+                    <connections>
+                        <outlet property="tfCode" destination="6wv-mj-5TQ" id="Miv-J9-k8r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMP-Aj-0Vu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4BZ-KQ-ICe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TYu-fh-lMW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xI7-Jk-GkJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="j6z-ma-kOf" kind="relationship" relationship="rootViewController" id="Y98-ip-c9u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Na-0m-Yjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+</document>
