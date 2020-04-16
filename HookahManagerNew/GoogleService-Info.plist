@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>264452588191-t11ds45g9f9ek1e4fb2josu425e924uu.apps.googleusercontent.com</string>
+	<string>264452588191-nmmqskeg0te6ukpe2rhcueumu9jcgnf4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.264452588191-t11ds45g9f9ek1e4fb2josu425e924uu</string>
+	<string>com.googleusercontent.apps.264452588191-nmmqskeg0te6ukpe2rhcueumu9jcgnf4</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBKV7zX6K3PGyPqZmIh_OG9j8kFDij45fM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.bitsoev.HookahManagerNew</string>
+	<string>bitsoev.gvidonmanager</string>
 	<key>PROJECT_ID</key>
 	<string>gvidon-f7fc5</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:264452588191:ios:c12b932945938b730218aa</string>
+	<string>1:264452588191:ios:c0bdf5bee4e846490218aa</string>
 	<key>DATABASE_URL</key>
 	<string>https://gvidon-f7fc5.firebaseio.com</string>
 </dict>

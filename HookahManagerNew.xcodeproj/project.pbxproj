@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		730836B26043015394599057 /* Pods_HookahManagerNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282A2B60A98460AC5B4A3673 /* Pods_HookahManagerNew.framework */; };
-		AC2ECCBA2437568A002CF21C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2ECCB924375689002CF21C /* GoogleService-Info.plist */; };
 		AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC305372243677A4002AA83C /* MainTabBar.storyboard */; };
 		AC30537524367883002AA83C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30537424367883002AA83C /* OrderList.storyboard */; };
 		AC30537724367A6F002AA83C /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537624367A6F002AA83C /* OrderListView.swift */; };
@@ -36,6 +35,15 @@
 		ACAEBF4B2437DA61008CEE2A /* TableSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEBF4A2437DA61008CEE2A /* TableSizeCell.swift */; };
 		ACAEBF4D2437DCC0008CEE2A /* OptionsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEBF4C2437DCC0008CEE2A /* OptionsItem.swift */; };
 		ACAEBF4F2437DD53008CEE2A /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEBF4E2437DD53008CEE2A /* OptionsCell.swift */; };
+		ACB2BF622444B62800843826 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB2BF612444B62800843826 /* Authentication.storyboard */; };
+		ACB2BF652444B81000843826 /* AuthEnterPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF642444B81000843826 /* AuthEnterPhoneVC.swift */; };
+		ACB2BF682444B86000843826 /* AuthEnterPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF672444B86000843826 /* AuthEnterPhoneController.swift */; };
+		ACB2BF6B2444B87400843826 /* AuthEnterPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF6A2444B87400843826 /* AuthEnterPhoneModel.swift */; };
+		ACB2BF6D2444CA6E00843826 /* AuthEnterCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF6C2444CA6E00843826 /* AuthEnterCodeVC.swift */; };
+		ACB2BF6F2444CA7D00843826 /* AuthEnterCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF6E2444CA7D00843826 /* AuthEnterCodeController.swift */; };
+		ACB2BF712444CA8800843826 /* AuthEnterCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF702444CA8800843826 /* AuthEnterCodeModel.swift */; };
+		ACB2BF742444DE5A00843826 /* UserCurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF732444DE5A00843826 /* UserCurrentState.swift */; };
+		ACB2BF762444EB5C00843826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACB2BF752444EB5B00843826 /* GoogleService-Info.plist */; };
 		ACD59E6424392DED0061A72F /* DayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD59E6324392DED0061A72F /* DayItem.swift */; };
 		ACD59E66243933CC0061A72F /* COSelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD59E65243933CC0061A72F /* COSelectDateView.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +52,7 @@
 		282A2B60A98460AC5B4A3673 /* Pods_HookahManagerNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahManagerNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A224026CCE5E8548E3AA03 /* Pods-HookahManagerNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManagerNew.debug.xcconfig"; path = "Target Support Files/Pods-HookahManagerNew/Pods-HookahManagerNew.debug.xcconfig"; sourceTree = "<group>"; };
 		A67E77A6FE1F3B616A69F799 /* Pods-HookahManagerNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManagerNew.release.xcconfig"; path = "Target Support Files/Pods-HookahManagerNew/Pods-HookahManagerNew.release.xcconfig"; sourceTree = "<group>"; };
-		AC2ECCB924375689002CF21C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC1BFE362443797100397F11 /* Столик Бронь.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Столик Бронь.entitlements"; sourceTree = "<group>"; };
 		AC305372243677A4002AA83C /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		AC30537424367883002AA83C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		AC30537624367A6F002AA83C /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
@@ -64,16 +72,26 @@
 		AC7EF207243711D50059B1C2 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		AC7EF209243712DE0059B1C2 /* TableSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSize.swift; sourceTree = "<group>"; };
 		AC7EF20C2437177D0059B1C2 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		AC9A91522443750200640C3A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AC9A91532443750900640C3A /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA4FFBA243676B90072A377 /* Столик Бронь.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Столик Бронь.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA4FFBD243676B90072A377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA4FFBF243676B90072A377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACA4FFC6243676BB0072A377 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ACA4FFC9243676BB0072A377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA4FFCB243676BB0072A377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAEBF472437D91D008CEE2A /* SizeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeItem.swift; sourceTree = "<group>"; };
 		ACAEBF4A2437DA61008CEE2A /* TableSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSizeCell.swift; sourceTree = "<group>"; };
 		ACAEBF4C2437DCC0008CEE2A /* OptionsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsItem.swift; sourceTree = "<group>"; };
 		ACAEBF4E2437DD53008CEE2A /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
+		ACB2BF612444B62800843826 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		ACB2BF642444B81000843826 /* AuthEnterPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterPhoneVC.swift; sourceTree = "<group>"; };
+		ACB2BF672444B86000843826 /* AuthEnterPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterPhoneController.swift; sourceTree = "<group>"; };
+		ACB2BF6A2444B87400843826 /* AuthEnterPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterPhoneModel.swift; sourceTree = "<group>"; };
+		ACB2BF6C2444CA6E00843826 /* AuthEnterCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterCodeVC.swift; sourceTree = "<group>"; };
+		ACB2BF6E2444CA7D00843826 /* AuthEnterCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterCodeController.swift; sourceTree = "<group>"; };
+		ACB2BF702444CA8800843826 /* AuthEnterCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterCodeModel.swift; sourceTree = "<group>"; };
+		ACB2BF732444DE5A00843826 /* UserCurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCurrentState.swift; sourceTree = "<group>"; };
+		ACB2BF752444EB5B00843826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ACD59E6324392DED0061A72F /* DayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItem.swift; sourceTree = "<group>"; };
 		ACD59E65243933CC0061A72F /* COSelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSelectDateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +111,7 @@
 		AC30536E24367745002AA83C /* Veiws */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2BF632444B7F200843826 /* Auth */,
 				AC71DFD02437CFF300F091CC /* OrderList */,
 				AC71DFD12437D04F00F091CC /* CreatingOrder */,
 			);
@@ -102,6 +121,7 @@
 		AC30536F24367755002AA83C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2BF662444B84D00843826 /* Auth */,
 				AC71DFD22437D05D00F091CC /* OrderList */,
 				AC71DFD32437D0AE00F091CC /* CreatingOrder */,
 				AC7EF20224370F7A0059B1C2 /* Entities */,
@@ -112,6 +132,7 @@
 		AC3053702436775E002AA83C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2BF692444B86500843826 /* Auth */,
 				AC71DFD42437D0CB00F091CC /* OrderList */,
 				AC71DFD52437D0D300F091CC /* CreatingOrder */,
 			);
@@ -121,6 +142,7 @@
 		AC30537124367775002AA83C /* Storyboards+Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2BF612444B62800843826 /* Authentication.storyboard */,
 				AC305372243677A4002AA83C /* MainTabBar.storyboard */,
 				AC30537424367883002AA83C /* OrderList.storyboard */,
 				AC71DFC82437CF2800F091CC /* CreatingOrder.storyboard */,
@@ -240,6 +262,8 @@
 		ACA4FFBC243676B90072A377 /* HookahManagerNew */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2BF722444DE4500843826 /* Singletons */,
+				AC1BFE362443797100397F11 /* Столик Бронь.entitlements */,
 				AC7EF20B2437175F0059B1C2 /* Extensions */,
 				AC30537124367775002AA83C /* Storyboards+Xibs */,
 				AC30536E24367745002AA83C /* Veiws */,
@@ -247,7 +271,7 @@
 				AC3053702436775E002AA83C /* Models */,
 				ACA4FFD1243676C80072A377 /* SupportingFiles */,
 				ACA4FFCB243676BB0072A377 /* Info.plist */,
-				AC2ECCB924375689002CF21C /* GoogleService-Info.plist */,
+				ACB2BF752444EB5B00843826 /* GoogleService-Info.plist */,
 			);
 			path = HookahManagerNew;
 			sourceTree = "<group>";
@@ -280,6 +304,41 @@
 				ACAEBF4E2437DD53008CEE2A /* OptionsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		ACB2BF632444B7F200843826 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2BF642444B81000843826 /* AuthEnterPhoneVC.swift */,
+				ACB2BF6C2444CA6E00843826 /* AuthEnterCodeVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ACB2BF662444B84D00843826 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2BF672444B86000843826 /* AuthEnterPhoneController.swift */,
+				ACB2BF6E2444CA7D00843826 /* AuthEnterCodeController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ACB2BF692444B86500843826 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2BF6A2444B87400843826 /* AuthEnterPhoneModel.swift */,
+				ACB2BF702444CA8800843826 /* AuthEnterCodeModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ACB2BF722444DE4500843826 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2BF732444DE5A00843826 /* UserCurrentState.swift */,
+			);
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 		C2AE0808FE8E5DFB32CFFC24 /* Frameworks */ = {
@@ -342,7 +401,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = ACA4FFB1243676B90072A377;
 			productRefGroup = ACA4FFBB243676B90072A377 /* Products */;
@@ -360,12 +419,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC71DFC92437CF2800F091CC /* CreatingOrder.storyboard in Resources */,
+				ACB2BF762444EB5C00843826 /* GoogleService-Info.plist in Resources */,
 				AC30538724368F30002AA83C /* .gitignore in Resources */,
+				ACB2BF622444B62800843826 /* Authentication.storyboard in Resources */,
 				AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */,
 				ACA4FFCA243676BB0072A377 /* LaunchScreen.storyboard in Resources */,
 				ACA4FFC7243676BB0072A377 /* Assets.xcassets in Resources */,
 				AC30537524367883002AA83C /* OrderList.storyboard in Resources */,
-				AC2ECCBA2437568A002CF21C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +479,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACAEBF4F2437DD53008CEE2A /* OptionsCell.swift in Sources */,
+				ACB2BF6D2444CA6E00843826 /* AuthEnterCodeVC.swift in Sources */,
 				AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */,
+				ACB2BF6F2444CA7D00843826 /* AuthEnterCodeController.swift in Sources */,
+				ACB2BF742444DE5A00843826 /* UserCurrentState.swift in Sources */,
 				AC30537924367ADA002AA83C /* OrderListController.swift in Sources */,
 				AC71DFCB2437CF4B00F091CC /* CreatingOrderView.swift in Sources */,
 				ACD59E6424392DED0061A72F /* DayItem.swift in Sources */,
@@ -429,14 +492,18 @@
 				AC3ED8A0243B99AC00C425E1 /* UIViewControllerExt.swift in Sources */,
 				ACA4FFBE243676B90072A377 /* AppDelegate.swift in Sources */,
 				AC7EF20424370F880059B1C2 /* Order.swift in Sources */,
+				ACB2BF6B2444B87400843826 /* AuthEnterPhoneModel.swift in Sources */,
 				AC30538124367D87002AA83C /* OrderListItemCell.swift in Sources */,
+				ACB2BF652444B81000843826 /* AuthEnterPhoneVC.swift in Sources */,
 				AC7EF20A243712DE0059B1C2 /* TableSize.swift in Sources */,
 				ACD59E66243933CC0061A72F /* COSelectDateView.swift in Sources */,
 				AC30537B24367AE4002AA83C /* OrderListModel.swift in Sources */,
 				AC30537E24367CB8002AA83C /* OrderListItem.swift in Sources */,
 				ACA4FFC0243676B90072A377 /* SceneDelegate.swift in Sources */,
+				ACB2BF712444CA8800843826 /* AuthEnterCodeModel.swift in Sources */,
 				AC7EF206243711470059B1C2 /* OrderStatus.swift in Sources */,
 				AC71DFCF2437CF7000F091CC /* CreatingOrderModel.swift in Sources */,
+				ACB2BF682444B86000843826 /* AuthEnterPhoneController.swift in Sources */,
 				ACAEBF482437D91D008CEE2A /* SizeItem.swift in Sources */,
 				ACAEBF4D2437DCC0008CEE2A /* OptionsItem.swift in Sources */,
 				AC30537724367A6F002AA83C /* OrderListView.swift in Sources */,
@@ -450,7 +517,8 @@
 		ACA4FFC8243676BB0072A377 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ACA4FFC9243676BB0072A377 /* Base */,
+				AC9A91522443750200640C3A /* ru */,
+				AC9A91532443750900640C3A /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -462,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -522,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -577,7 +647,10 @@
 			baseConfigurationReference = 67A224026CCE5E8548E3AA03 /* Pods-HookahManagerNew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HookahManagerNew/Столик Бронь.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -585,8 +658,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.gvidonmanager;
 				PRODUCT_NAME = "Столик Бронь";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -597,7 +672,10 @@
 			baseConfigurationReference = A67E77A6FE1F3B616A69F799 /* Pods-HookahManagerNew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HookahManagerNew/Столик Бронь.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -605,8 +683,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitsoev.HookahManagerNew;
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.gvidonmanager;
 				PRODUCT_NAME = "Столик Бронь";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

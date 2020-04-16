@@ -12,9 +12,9 @@ import Foundation
 class OrderListController {
     
 
-    init(view: OrderListView) {
+    init(view: OrderListView, model: OrderListModel) {
         self.view = view
-        self.model = OrderListModel()
+        self.model = model
     }
 
     

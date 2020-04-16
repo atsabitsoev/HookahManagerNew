@@ -11,5 +11,8 @@ target 'HookahManagerNew' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Functions'
+  pod 'Firebase/Auth'
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'PhoneNumberKit', '~> 3.1'
 
 end

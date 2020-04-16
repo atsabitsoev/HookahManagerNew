@@ -30,7 +30,7 @@ class OrderListView: UIViewController {
     
     
     func configureModule() {
-        self.controller = OrderListController(view: self)
+        self.controller = OrderListController(view: self, model: OrderListModel())
     }
     
     
