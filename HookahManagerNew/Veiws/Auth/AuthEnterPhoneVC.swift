@@ -8,6 +8,7 @@
 
 import UIKit
 import PhoneNumberKit
+import FirebaseAuth
 
 
 class AuthEnterPhoneVC: UIViewController {
@@ -51,9 +52,11 @@ class AuthEnterPhoneVC: UIViewController {
     
     
     //MARK: Navigation
-    func showAuthEnterCodeVC() {
+    func showAuthEnterCodeVC(verificationId: String?) {
+        guard let verificationId = verificationId else { return }
         let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AuthEnterCodeVC")
+        let vc = storyboard.instantiateViewController(withIdentifier: "AuthEnterCodeVC") as! AuthEnterCodeVC
+        vc.verificationId = verificationId
         self.navigationController?.show(vc, sender: nil)
     }
     

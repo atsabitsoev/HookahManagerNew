@@ -15,18 +15,24 @@ class OrderListModel {
     
     
     private lazy var functions = Functions.functions()
+    private let userCurrentState = UserCurrentState.standard
     
     
-    func startOrdersListener(_ handler: @escaping ([Order]?, Error?) -> ()) {
+    func startOrdersListener(_ handler: @escaping ([Order]?, String?) -> ()) {
+        
+        guard let restaurantId = userCurrentState.getRestaurantId() else {
+            handler(nil, "Не удалось получить id ресторана")
+            return
+        }
         
         let db = Firestore.firestore()
         db.collection("restaurants")
-            .document("iX2jYDuiTxBpofOUHcvL")
+            .document(restaurantId)
             .collection("orders")
             .addSnapshotListener { (querySnap, error) in
             
                 guard let querySnap = querySnap else {
-                    handler(nil, error ?? nil)
+                    handler(nil, error?.localizedDescription ?? nil)
                     return
                 }
             
@@ -64,7 +70,10 @@ class OrderListModel {
                            status: String,
                            _ handler: @escaping (Bool, String?) -> ()) {
         
-        let restaurantId = "iX2jYDuiTxBpofOUHcvL"
+        guard let restaurantId = userCurrentState.getRestaurantId() else {
+            handler(false, "Не удалось получить id ресторана")
+            return
+        }
         let dict: [String: Any] = ["orderId": orderId,
                                    "restaurantId": restaurantId,
                                    "status": status]

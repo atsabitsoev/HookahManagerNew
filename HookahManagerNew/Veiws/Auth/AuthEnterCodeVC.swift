@@ -12,6 +12,7 @@ class AuthEnterCodeVC: UIViewController {
     
     
     private var controller: AuthEnterCodeController!
+    var verificationId: String!
     
     
     @IBOutlet weak var tfCode: UITextField!
@@ -34,7 +35,8 @@ class AuthEnterCodeVC: UIViewController {
     }
     
     private func configureModule() {
-        self.controller = AuthEnterCodeController(view: self, model: AuthEnterCodeModel())
+        controller = AuthEnterCodeController(view: self, model: AuthEnterCodeModel())
+        controller.verificationId = verificationId
     }
     
     
@@ -45,7 +47,20 @@ class AuthEnterCodeVC: UIViewController {
     
     func configureView(codeLength: Int) {
         self.codeLength = codeLength
+        tfCode.placeholder = Array(1...codeLength).map({ (i) -> String in
+            return "X"
+            }).joined()
         tfCode.delegate = self
+    }
+    
+    
+    //MARK: Navigation
+    func showMainTabBar() {
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let mainTabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+        mainTabBar.modalPresentationStyle = .fullScreen
+        mainTabBar.modalTransitionStyle = .flipHorizontal
+        self.navigationController?.present(mainTabBar, animated: true, completion: nil)
     }
 
     
@@ -58,6 +73,8 @@ class AuthEnterCodeVC: UIViewController {
     
 }
 
+
+//MARK: TEXTFIELD DELEGATE
 extension AuthEnterCodeVC: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

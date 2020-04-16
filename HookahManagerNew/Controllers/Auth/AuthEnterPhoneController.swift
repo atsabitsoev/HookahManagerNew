@@ -52,12 +52,12 @@ class AuthEnterPhoneController {
     
     
     private func sendCode(to phone: String) {
-        model.sendCode(to: phone) { (succeed, errorString) in
-            guard succeed else {
+        model.sendCode(to: phone) { (verificationId, errorString) in
+            guard let verificationId = verificationId else {
                 self.view.alertError(errorString ?? "Не удалось отправить СМС, проверьте введенные данные")
                 return
             }
-            self.view.showAuthEnterCodeVC()
+            self.view.showAuthEnterCodeVC(verificationId: verificationId)
         }
     }
     

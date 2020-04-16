@@ -7,16 +7,23 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 
 class AuthEnterPhoneModel {
     
     
     func sendCode(to phone: String,
-                  _ handler: @escaping (Bool, String?) -> ()) {
+                  _ handler: @escaping (_ verificationId: String?, _ errorString: String?) -> ()) {
         
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
-            handler(true, nil)
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil) { (verificationId, error) in
+            guard let verificationId = verificationId else {
+                handler(nil, error?.localizedDescription)
+                print(error)
+                return
+            }
+            handler(verificationId, nil)
         }
     }
 }

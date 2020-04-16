@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		730836B26043015394599057 /* Pods_HookahManagerNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282A2B60A98460AC5B4A3673 /* Pods_HookahManagerNew.framework */; };
-		AC1BFE3824437F7600397F11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1BFE3724437F7600397F11 /* GoogleService-Info.plist */; };
 		AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC305372243677A4002AA83C /* MainTabBar.storyboard */; };
 		AC30537524367883002AA83C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC30537424367883002AA83C /* OrderList.storyboard */; };
 		AC30537724367A6F002AA83C /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30537624367A6F002AA83C /* OrderListView.swift */; };
@@ -43,6 +42,8 @@
 		ACB2BF6D2444CA6E00843826 /* AuthEnterCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF6C2444CA6E00843826 /* AuthEnterCodeVC.swift */; };
 		ACB2BF6F2444CA7D00843826 /* AuthEnterCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF6E2444CA7D00843826 /* AuthEnterCodeController.swift */; };
 		ACB2BF712444CA8800843826 /* AuthEnterCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF702444CA8800843826 /* AuthEnterCodeModel.swift */; };
+		ACB2BF742444DE5A00843826 /* UserCurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2BF732444DE5A00843826 /* UserCurrentState.swift */; };
+		ACB2BF762444EB5C00843826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACB2BF752444EB5B00843826 /* GoogleService-Info.plist */; };
 		ACD59E6424392DED0061A72F /* DayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD59E6324392DED0061A72F /* DayItem.swift */; };
 		ACD59E66243933CC0061A72F /* COSelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD59E65243933CC0061A72F /* COSelectDateView.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +53,6 @@
 		67A224026CCE5E8548E3AA03 /* Pods-HookahManagerNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManagerNew.debug.xcconfig"; path = "Target Support Files/Pods-HookahManagerNew/Pods-HookahManagerNew.debug.xcconfig"; sourceTree = "<group>"; };
 		A67E77A6FE1F3B616A69F799 /* Pods-HookahManagerNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManagerNew.release.xcconfig"; path = "Target Support Files/Pods-HookahManagerNew/Pods-HookahManagerNew.release.xcconfig"; sourceTree = "<group>"; };
 		AC1BFE362443797100397F11 /* Столик Бронь.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Столик Бронь.entitlements"; sourceTree = "<group>"; };
-		AC1BFE3724437F7600397F11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC305372243677A4002AA83C /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		AC30537424367883002AA83C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		AC30537624367A6F002AA83C /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		ACB2BF6C2444CA6E00843826 /* AuthEnterCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterCodeVC.swift; sourceTree = "<group>"; };
 		ACB2BF6E2444CA7D00843826 /* AuthEnterCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterCodeController.swift; sourceTree = "<group>"; };
 		ACB2BF702444CA8800843826 /* AuthEnterCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEnterCodeModel.swift; sourceTree = "<group>"; };
+		ACB2BF732444DE5A00843826 /* UserCurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCurrentState.swift; sourceTree = "<group>"; };
+		ACB2BF752444EB5B00843826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ACD59E6324392DED0061A72F /* DayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItem.swift; sourceTree = "<group>"; };
 		ACD59E65243933CC0061A72F /* COSelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSelectDateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +262,7 @@
 		ACA4FFBC243676B90072A377 /* HookahManagerNew */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2BF722444DE4500843826 /* Singletons */,
 				AC1BFE362443797100397F11 /* Столик Бронь.entitlements */,
 				AC7EF20B2437175F0059B1C2 /* Extensions */,
 				AC30537124367775002AA83C /* Storyboards+Xibs */,
@@ -268,7 +271,7 @@
 				AC3053702436775E002AA83C /* Models */,
 				ACA4FFD1243676C80072A377 /* SupportingFiles */,
 				ACA4FFCB243676BB0072A377 /* Info.plist */,
-				AC1BFE3724437F7600397F11 /* GoogleService-Info.plist */,
+				ACB2BF752444EB5B00843826 /* GoogleService-Info.plist */,
 			);
 			path = HookahManagerNew;
 			sourceTree = "<group>";
@@ -328,6 +331,14 @@
 				ACB2BF702444CA8800843826 /* AuthEnterCodeModel.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		ACB2BF722444DE4500843826 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2BF732444DE5A00843826 /* UserCurrentState.swift */,
+			);
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 		C2AE0808FE8E5DFB32CFFC24 /* Frameworks */ = {
@@ -408,13 +419,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC71DFC92437CF2800F091CC /* CreatingOrder.storyboard in Resources */,
+				ACB2BF762444EB5C00843826 /* GoogleService-Info.plist in Resources */,
 				AC30538724368F30002AA83C /* .gitignore in Resources */,
 				ACB2BF622444B62800843826 /* Authentication.storyboard in Resources */,
 				AC305373243677A4002AA83C /* MainTabBar.storyboard in Resources */,
 				ACA4FFCA243676BB0072A377 /* LaunchScreen.storyboard in Resources */,
 				ACA4FFC7243676BB0072A377 /* Assets.xcassets in Resources */,
 				AC30537524367883002AA83C /* OrderList.storyboard in Resources */,
-				AC1BFE3824437F7600397F11 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +482,7 @@
 				ACB2BF6D2444CA6E00843826 /* AuthEnterCodeVC.swift in Sources */,
 				AC3053832436856A002AA83C /* SwipeTypes.swift in Sources */,
 				ACB2BF6F2444CA7D00843826 /* AuthEnterCodeController.swift in Sources */,
+				ACB2BF742444DE5A00843826 /* UserCurrentState.swift in Sources */,
 				AC30537924367ADA002AA83C /* OrderListController.swift in Sources */,
 				AC71DFCB2437CF4B00F091CC /* CreatingOrderView.swift in Sources */,
 				ACD59E6424392DED0061A72F /* DayItem.swift in Sources */,
@@ -636,8 +648,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "HookahManagerNew/Столик Бронь.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
@@ -649,7 +661,7 @@
 				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.gvidonmanager;
 				PRODUCT_NAME = "Столик Бронь";
-				PROVISIONING_PROFILE_SPECIFIER = GvidonManagerProf;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -661,8 +673,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "HookahManagerNew/Столик Бронь.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
 				INFOPLIST_FILE = HookahManagerNew/Info.plist;
@@ -674,7 +686,7 @@
 				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.gvidonmanager;
 				PRODUCT_NAME = "Столик Бронь";
-				PROVISIONING_PROFILE_SPECIFIER = GvidonManagerProf;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

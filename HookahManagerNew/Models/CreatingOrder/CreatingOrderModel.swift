@@ -16,6 +16,8 @@ class CreatingOrderModel {
     
     private let db = Firestore.firestore()
     private lazy var functions = Functions.functions()
+    
+    private let userCurrentState = UserCurrentState.standard
     private var tableOrderedDatesDict: [String: [Date]] = [:]
     private var weekDaysDates: [Int: (startDate: Date, endDate: Date)] = [:]
     
@@ -23,8 +25,13 @@ class CreatingOrderModel {
     //MARK: Fetch Tables
     func fetchTables(_ handler: @escaping ([Table]?, String?) -> ()) {
         
+        guard let restaurantId = userCurrentState.getRestaurantId() else {
+            handler(nil, "Не удалось получить id ресторана")
+            return
+        }
+        
         db.collection("restaurants")
-            .document("iX2jYDuiTxBpofOUHcvL")
+            .document(restaurantId)
             .collection("tables")
             .getDocuments { (querySnap, error) in
                 
@@ -135,10 +142,15 @@ class CreatingOrderModel {
     func createOrder(order: Order,
                      _ handler: @escaping (Bool, String?) -> ()) {
         
+        guard let restaurantId = userCurrentState.getRestaurantId() else {
+            handler(false, "Не удалось получить id ресторана")
+            return
+        }
+        
         let numberDateString = order.date.string(in: "yyyyMMddHHmm")
         let randomNumber = Int.random(in: 100...999)
         let number = "\(numberDateString)\(randomNumber)"
-        let orderDict: [String: Any] = ["restaurantId": "iX2jYDuiTxBpofOUHcvL",
+        let orderDict: [String: Any] = ["restaurantId": restaurantId,
                                         "order": ["customerName": order.customerName,
                                                   "status": order.status.rawValue,
                                                   "number": number,

@@ -15,8 +15,11 @@ class AuthEnterCodeController {
     private var view: AuthEnterCodeVC!
     private var model: AuthEnterCodeModel!
     
+    private let userCurrentState = UserCurrentState.standard
     
-    private let codeLength = 4
+    
+    var verificationId: String!
+    private let codeLength = 6
     
     
     init(view: AuthEnterCodeVC, model: AuthEnterCodeModel) {
@@ -36,12 +39,23 @@ class AuthEnterCodeController {
     
     func codeChanged(to newCode: String) {
         if newCode.count == codeLength {
-            checkCode(newCode)
+            checkCode(verificationId: verificationId, code: newCode)
         }
     }
     
-    private func checkCode(_ code: String) {
-        print("Проверяем код: \(code)")
+    private func checkCode(verificationId: String, code: String) {
+        model.signIn(verificationId: verificationId, code: code) { (restaurantId, userId, errorString) in
+            
+            guard let restaurantId = restaurantId,
+                let userId = userId else {
+                    
+                self.view.alertError(errorString)
+                return
+            }
+            
+            self.userCurrentState.loginSave(userId: userId, restaurantId: restaurantId)
+            self.view.showMainTabBar()
+        }
     }
     
 }
